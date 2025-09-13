@@ -147,18 +147,24 @@ dream restore         # Try manual restore
 ls -la .claude_dream* # Check for local dreams
 ```
 
+## 🛡️ Security & Privacy
+
+- **No web UI for sensitive data** - Landing page shows only mysterious brain animation
+- **API requires project path** - No browsing of others' dreams
+- **Your Cloudflare account** - Data never touches third parties  
+- **Auto-expiring data** - Dreams vanish after 30 days
+- **No secrets exposed** - .gitignore prevents committing keys
+
+## 🎨 The Landing Page
+
+Visit `https://keendreams.workers.dev` to see a mysterious animated brain with floating particles and neural connections - perfect for showing off your dream system without exposing any project data.
+
 ## 🚀 Advanced Features
 
-### Share Dreams with Team
+### Team Sharing (Secure)
 ```bash
-# Your teammate can restore your exact context
-curl https://keendreams.workers.dev/dream/latest/project-name
-```
-
-### Dream History
-```bash
-# See all dreams for a project
-curl https://keendreams.workers.dev/projects
+# Only works if you know the exact project path
+curl https://keendreams.workers.dev/dream/latest/exact-project-path
 ```
 
 ### Custom Domains

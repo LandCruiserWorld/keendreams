@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "wrangler dev",
-    "deploy": "wrangler deploy",
-    "create-kv": "wrangler kv:namespace create SESSIONS && wrangler kv:namespace create PROJECTS"
+    "dev": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy",
+    "build": "node scripts/build.js",
+    "create-kv": "wrangler kv:namespace create DREAMS && wrangler kv:namespace create PROJECTS"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20240117.0",

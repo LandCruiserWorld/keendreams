@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌙 KeenDreams - Your Claude Memory</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #fff;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .subtitle {
+            opacity: 0.9;
+            margin-bottom: 30px;
+            font-size: 1.2em;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .project-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        
+        .project-name {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .project-path {
+            font-size: 0.9em;
+            opacity: 0.8;
+            font-family: 'Courier New', monospace;
+            margin-bottom: 15px;
+            word-break: break-all;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .tech-badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85em;
+        }
+        
+        .last-dream {
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+        
+        .dream-viewer {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        
+        .dream-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #1a1a2e;
+            border-radius: 15px;
+            padding: 30px;
+            color: #fff;
+            position: relative;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: #fff;
+            font-size: 1.5em;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .close-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .dream-section {
+            margin-bottom: 25px;
+        }
+        
+        .dream-section h3 {
+            color: #a78bfa;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+        
+        .dream-section pre {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            line-height: 1.5;
+        }
+        
+        .task-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .task-list li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .task-list li:before {
+            content: '☐';
+            position: absolute;
+            left: 0;
+        }
+        
+        .task-list li.completed:before {
+            content: '☑';
+            color: #10b981;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 50px;
+            font-size: 1.2em;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 100px 20px;
+            opacity: 0.8;
+        }
+        
+        .empty-state h2 {
+            margin-bottom: 20px;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #fbbf24;
+        }
+        
+        .stat-label {
+            font-size: 0.9em;
+            opacity: 0.8;
+            margin-top: 5px;
+        }
+        
+        @media (max-width: 600px) {
+            h1 { font-size: 2em; }
+            .projects-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌙 KeenDreams</h1>
+        <p class="subtitle">Your Claude project memories, persisted across sessions</p>
+        
+        <div class="stats" id="stats">
+            <div class="stat">
+                <div class="stat-value" id="totalProjects">0</div>
+                <div class="stat-label">Projects</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="totalDreams">0</div>
+                <div class="stat-label">Dreams</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="tokensSaved">0</div>
+                <div class="stat-label">Tokens Saved</div>
+            </div>
+        </div>
+        
+        <div id="loading" class="loading">Loading your dreams...</div>
+        <div id="projects" class="projects-grid" style="display: none;"></div>
+        <div id="empty" class="empty-state" style="display: none;">
+            <h2>No dreams yet 🌙</h2>
+            <p>Start using the dream commands in your projects:</p>
+            <pre style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 10px; margin-top: 20px;">
+dream init      # Start tracking
+dream capture   # Save your work
+wake           # Restore context</pre>
+        </div>
+    </div>
+    
+    <div id="dreamViewer" class="dream-viewer">
+        <div class="dream-content">
+            <button class="close-btn" onclick="closeDream()">✕</button>
+            <div id="dreamDetails"></div>
+        </div>
+    </div>
+    
+    <script>
+        async function loadProjects() {
+            try {
+                const response = await fetch('/projects');
+                const projects = await response.json();
+                
+                const loading = document.getElementById('loading');
+                const projectsGrid = document.getElementById('projects');
+                const emptyState = document.getElementById('empty');
+                
+                loading.style.display = 'none';
+                
+                if (projects.length === 0) {
+                    emptyState.style.display = 'block';
+                    return;
+                }
+                
+                // Update stats
+                document.getElementById('totalProjects').textContent = projects.length;
+                let totalDreams = 0;
+                let tokensSaved = 0;
+                
+                projectsGrid.innerHTML = projects.map(project => {
+                    const lastUpdated = new Date(project.lastUpdated);
+                    const daysAgo = Math.floor((Date.now() - lastUpdated) / (1000 * 60 * 60 * 24));
+                    totalDreams++; // Simple count, you could enhance this
+                    tokensSaved += 1800; // Estimate 1800 tokens saved per dream
+                    
+                    return `
+                        <div class="project-card" onclick="loadDream('${encodeURIComponent(project.path)}')">
+                            <div class="project-name">${project.projectName || 'Unnamed Project'}</div>
+                            <div class="project-path">${project.path}</div>
+                            <div class="tech-stack">
+                                ${(project.techStack || []).map(tech => 
+                                    `<span class="tech-badge">${tech}</span>`
+                                ).join('')}
+                            </div>
+                            <div class="last-dream">
+                                Last dream: ${daysAgo === 0 ? 'Today' : daysAgo === 1 ? 'Yesterday' : `${daysAgo} days ago`}
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+                
+                document.getElementById('totalDreams').textContent = totalDreams;
+                document.getElementById('tokensSaved').textContent = tokensSaved.toLocaleString();
+                
+                projectsGrid.style.display = 'grid';
+                
+            } catch (error) {
+                console.error('Error loading projects:', error);
+                document.getElementById('loading').innerHTML = 'Error loading dreams. Please check your connection.';
+            }
+        }
+        
+        async function loadDream(projectPath) {
+            try {
+                const response = await fetch(`/dream/latest/${projectPath}`);
+                const dream = await response.json();
+                
+                const viewer = document.getElementById('dreamViewer');
+                const details = document.getElementById('dreamDetails');
+                
+                details.innerHTML = `
+                    <h2>🌙 ${dream.projectName}</h2>
+                    <p style="opacity: 0.8; margin-bottom: 20px;">Dream from ${new Date(dream.timestamp).toLocaleString()}</p>
+                    
+                    ${dream.context.summary ? `
+                    <div class="dream-section">
+                        <h3>Summary</h3>
+                        <p>${dream.context.summary}</p>
+                    </div>
+                    ` : ''}
+                    
+                    ${dream.context.currentTasks?.length ? `
+                    <div class="dream-section">
+                        <h3>Current Tasks</h3>
+                        <ul class="task-list">
+                            ${dream.context.currentTasks.map(task => 
+                                `<li>${task}</li>`
+                            ).join('')}
+                        </ul>
+                    </div>
+                    ` : ''}
+                    
+                    ${dream.context.completedTasks?.length ? `
+                    <div class="dream-section">
+                        <h3>Completed Tasks</h3>
+                        <ul class="task-list">
+                            ${dream.context.completedTasks.map(task => 
+                                `<li class="completed">${task}</li>`
+                            ).join('')}
+                        </ul>
+                    </div>
+                    ` : ''}
+                    
+                    ${dream.conversation?.keyDecisions?.length ? `
+                    <div class="dream-section">
+                        <h3>Key Decisions</h3>
+                        <ul>
+                            ${dream.conversation.keyDecisions.map(decision => 
+                                `<li>${decision}</li>`
+                            ).join('')}
+                        </ul>
+                    </div>
+                    ` : ''}
+                    
+                    ${dream.conversation?.blockers?.length ? `
+                    <div class="dream-section">
+                        <h3>Blockers</h3>
+                        <ul>
+                            ${dream.conversation.blockers.map(blocker => 
+                                `<li>⚠️ ${blocker}</li>`
+                            ).join('')}
+                        </ul>
+                    </div>
+                    ` : ''}
+                    
+                    ${dream.context.fileStructure?.length ? `
+                    <div class="dream-section">
+                        <h3>File Structure</h3>
+                        <pre>${dream.context.fileStructure.join('\n')}</pre>
+                    </div>
+                    ` : ''}
+                    
+                    <div class="dream-section">
+                        <h3>Quick Restore Command</h3>
+                        <pre>curl ${window.location.origin}/summary/${projectPath} > DREAM_RESTORED.md</pre>
+                    </div>
+                `;
+                
+                viewer.style.display = 'block';
+                
+            } catch (error) {
+                console.error('Error loading dream:', error);
+                alert('Could not load dream details');
+            }
+        }
+        
+        function closeDream() {
+            document.getElementById('dreamViewer').style.display = 'none';
+        }
+        
+        // Close dream viewer on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeDream();
+        });
+        
+        // Load projects on page load
+        loadProjects();
+        
+        // Refresh every 30 seconds
+        setInterval(loadProjects, 30000);
+    </script>
+</body>
+</html>
