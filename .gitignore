@@ -1,0 +1,51 @@
+# ===== DREAMS TO FORGET (Don't commit these) =====
+# These files are temporary or personal to your machine
+
+# 🌙 Dream restoration files (auto-generated each session)
+DREAM_RESTORED.md
+NEXT_DREAM.md
+.claude_dream_*.json
+/tmp/claude_dream.json
+/tmp/last_dream.json
+
+# 🔑 Cloudflare secrets (NEVER commit these!)
+.dev.vars
+.env
+.env.local
+wrangler.toml.backup
+
+# 📦 Dependencies (can be reinstalled)
+node_modules/
+npm-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# 🏗️ Build outputs
+dist/
+.wrangler/
+build/
+*.log
+
+# 💻 System files (annoying hidden files)
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# 🔧 IDE settings (personal preferences)
+.vscode/
+.idea/
+*.sublime-*
+
+# ===== DREAMS TO KEEP (These get committed) =====
+# ✅ CLAUDE.md - Your main architecture
+# ✅ dream_*.md - Daily dream journals
+# ✅ src/ - All source code
+# ✅ scripts/ - All scripts
+# ✅ package.json - Dependencies list
+# ✅ README.md - Documentation
+
+# 🎯 Special case - fingerprint file
+# This identifies your project but contains no sensitive data
+!.claude_fingerprint
