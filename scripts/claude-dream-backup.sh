@@ -114,102 +114,34 @@ EOF
 }
 
 function restore_dream() {
-    echo -e "${PURPLE}🌙 Restoring dream context...${NC}"
+    echo -e "${PURPLE}🌙 Restoring your Claude dream...${NC}"
     
-    # Try cloud first
+    # Try to get from Cloudflare first
     response=$(curl -s -H "Authorization: Bearer ${API_KEY}" "${WORKER_URL}/dream/latest/$(echo $PROJECT_PATH | sed 's/\//%2F/g')" 2>/dev/null)
     
-    # Check if we got a valid dream response
-    if echo "$response" | grep -q '"projectName"' && echo "$response" | grep -q '"timestamp"'; then
-        echo -e "${GREEN}✨ Found dream in the cloud${NC}"
-        echo "$response" | jq '.' > /tmp/last_dream.json
-        
-        # Extract wake-up context (handle both enhanced and standard dreams)
-        WAKE_CONTEXT=$(echo "$response" | jq -r '.wakeUp.quickSummary // .context.summary // "Dream context restored"')
-        LAST_INTENT=$(echo "$response" | jq -r '.wakeUp.lastIntent // .context.customNotes // "Continue development"')
-        
-        # Show dream summary
-        echo -e "\n${PURPLE}🌙 Dream Context:${NC}"
-        echo -e "${GREEN}Intent: ${LAST_INTENT}${NC}"
-        echo -e "${BLUE}Context: ${WAKE_CONTEXT}${NC}"
-        
-        # Show working commands if available
-        WORKING_COMMANDS=$(echo "$response" | jq -r '.wakeUp.workingCommands[]?.command // .conversation.commandHistory[]?.command // empty' 2>/dev/null)
-        if [ -n "$WORKING_COMMANDS" ]; then
-            echo -e "\n${GREEN}💻 Commands that worked:${NC}"
-            echo "$WORKING_COMMANDS" | head -5 | while read cmd; do
-                echo -e "${YELLOW}  $cmd${NC}"
-            done
-        fi
-        
-        # Show modified files if available
-        MODIFIED_FILES=$(echo "$response" | jq -r '.wakeUp.modifiedFiles[]?.file // .conversation.codeChanges[]?.file // empty' 2>/dev/null)
-        if [ -n "$MODIFIED_FILES" ]; then
-            echo -e "\n${GREEN}📁 Files modified:${NC}"
-            echo "$MODIFIED_FILES" | while read file; do
-                echo -e "${YELLOW}  $file${NC}"
-            done
-        fi
-        
-        echo -e "\n${GREEN}🌟 Dream context restored!${NC}"
+    if [ $? -eq 0 ] && echo "$response" | grep -q "projectName"; then
+        echo -e "${GREEN}✨ Found your dream in the cloud${NC}"
+        echo "$response" > /tmp/last_dream.json
         
         # Generate summary for Claude
         summary=$(curl -s -H "Authorization: Bearer ${API_KEY}" "${WORKER_URL}/summary/$(echo $PROJECT_PATH | sed 's/\//%2F/g')")
         echo "$summary" > DREAM_RESTORED.md
-        
-        # Show complete project portfolio organized by activity
-        echo -e "\n${BLUE}📋 Complete Project Portfolio:${NC}"
-        
-        # Fetch portfolio from KeenDreams API
-        portfolio_response=$(curl -s "${WORKER_URL}/claude/portfolio" 2>/dev/null)
-        
-        if [ $? -eq 0 ] && command -v jq >/dev/null 2>&1; then
-            echo -e "\n${GREEN}🔥 Recent Activity (Last 7 days):${NC}"
-            echo "$portfolio_response" | jq -r '.activeProjects[]? | "  • " + .name + " [" + (.techStack | join(", ")) + "] - " + (.totalHours | tostring) + "h"' 2>/dev/null
-            
-            echo -e "\n${YELLOW}📅 Active (Last 30 days):${NC}"
-            echo "$portfolio_response" | jq -r '.projects[]? | select(.isActive == true) | "  • " + .name + " [" + (.techStack | join(", ")) + "] - " + (.totalHours | tostring) + "h"' 2>/dev/null
-            
-            echo -e "\n${BLUE}📚 Older Projects:${NC}"
-            echo "$portfolio_response" | jq -r '.projects[]? | select(.isActive != true) | "  • " + .name + " [" + (.techStack | join(", ")) + "] - " + (.totalHours | tostring) + "h"' 2>/dev/null
-        else
-            # Fallback if API call fails
-            echo -e "${GREEN}🔥 Recent Activity:${NC}"
-            echo -e "  • claude-memory [Node.js, Git] - Current directory"
-            echo -e "\n${YELLOW}📅 Active Projects:${NC}"
-            echo -e "  • shush [Node.js, Git] - AI avatar platform"
-            echo -e "  • aifi-repo [Git] - AI project"
-            echo -e "\n${BLUE}📚 Older Projects:${NC}"
-            echo -e "  • Maryland-Register-App [Node.js, TypeScript] - Government portal"
-            echo -e "  • story-health-lens [Node.js, TypeScript] - Analysis tool"
-            echo -e "  • And 10+ more projects..."
-        fi
-        
-        echo -e "\n${BLUE}Which project are you focusing on in this session?${NC}"
-        echo -e "${GREEN}(This helps Claude provide the right context and suggestions)${NC}"
-        echo ""
-        read -p "Project name: " PROJECT_CONTEXT
-        
-        if [ -n "$PROJECT_CONTEXT" ]; then
-            echo -e "\n${GREEN}✓ Setting context for: ${PROJECT_CONTEXT}${NC}"
-            echo "CURRENT_PROJECT_CONTEXT=$PROJECT_CONTEXT" > .current_project_context
-            echo -e "${BLUE}💡 Claude will now focus on ${PROJECT_CONTEXT} for this session${NC}"
-        fi
-        
+        echo -e "${GREEN}✨ Dream restored to DREAM_RESTORED.md${NC}"
     else
-        echo -e "${YELLOW}⚠ No dream found in cloud, checking local backup...${NC}"
+        echo -e "${YELLOW}⚠ No cloud dream found, checking local dreams${NC}"
         latest_dream=$(ls -t .claude_dream_*.json 2>/dev/null | head -1)
         if [ -n "$latest_dream" ]; then
             echo -e "${GREEN}✓ Found local dream: $latest_dream${NC}"
             cat "$latest_dream" > /tmp/last_dream.json
-            # Display basic summary
-            echo -e "\n${PURPLE}🌙 Dream Summary:${NC}"
-            cat /tmp/last_dream.json | jq -r '.context.summary' 2>/dev/null || echo "Local dream restored"
         else
             echo -e "${YELLOW}No previous dreams found${NC}"
             return 1
         fi
     fi
+    
+    # Display summary
+    echo -e "\n${PURPLE}🌙 Dream Summary:${NC}"
+    cat DREAM_RESTORED.md 2>/dev/null || cat /tmp/last_dream.json | jq -r '.context.summary'
 }
 
 function generate_next_dream() {

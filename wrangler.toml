@@ -4,16 +4,15 @@ compatibility_date = "2024-01-01"
 
 [vars]
 ALLOWED_ORIGINS = "*"
+API_SECRET = "ce07bf20b2f511955b11731c62937601097e75e278fe5d63f3da9240d93279fa"
 
 [[kv_namespaces]]
 binding = "DREAMS"
-id = "your_kv_namespace_id"
-preview_id = "your_preview_kv_namespace_id"
+id = "0b88fd8ff6914b48a4305d15bc0287ab"
 
 [[kv_namespaces]]
 binding = "PROJECTS"
-id = "your_projects_kv_id"
-preview_id = "your_projects_preview_id"
+id = "394b7ec87e7e4838b3f2a085e16730f0"
 
 [env.production]
 route = "keendreams.*.workers.dev/*"

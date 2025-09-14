@@ -49,3 +49,13 @@ Thumbs.db
 # 🎯 Special case - fingerprint file
 # This identifies your project but contains no sensitive data
 !.claude_fingerprint
+
+# Session and temporary files
+.dream_session_start
+.enhanced_dream_*.json
+.current_project_context
+last-session-info.json
+claude-dream-*.json
+ENHANCED_WAKE.md
+bookmarklet-url.txt
+*.html
