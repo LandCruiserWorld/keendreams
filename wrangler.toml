@@ -1,0 +1,36 @@
+name = "keendreams"
+main = "keendreams-worker.js"
+compatibility_date = "2024-01-01"
+
+# KV Namespaces - REAL DREAMS DATA
+[[kv_namespaces]]
+binding = "DREAMS"
+id = "0b88fd8ff6914b48a4305d15bc0287ab"
+
+[[kv_namespaces]]
+binding = "PROJECTS" 
+id = "394b7ec87e7e4838b3f2a085e16730f0"
+
+# Cache namespace
+[[kv_namespaces]]
+binding = "KEENDREAMS_KV"
+id = "e40a223122d84df490d67e2631c1067b"
+
+# Environment variables (secret will be set via wrangler secret)
+# Note: API key should be set as secret, not var for security
+
+# Cron trigger for cache warming (every 5 minutes)
+[triggers]
+crons = ["*/5 * * * *"]
+
+# Routes
+routes = [
+  "keendreams.terry-c67.workers.dev/*"
+]
+
+# Performance settings
+[build]
+command = ""
+watch_paths = ["keendreams-worker.js"]
+
+# Simple configuration without experimental rules
