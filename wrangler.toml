@@ -2,6 +2,11 @@ name = "keendreams"
 main = "keendreams-worker.js"
 compatibility_date = "2024-01-01"
 
+# Custom domain routing
+routes = [
+  "terryrichards.dev/*"
+]
+
 # KV Namespaces - REAL DREAMS DATA
 [[kv_namespaces]]
 binding = "DREAMS"
@@ -22,11 +27,6 @@ id = "e40a223122d84df490d67e2631c1067b"
 # Cron trigger for cache warming (every 5 minutes)
 [triggers]
 crons = ["*/5 * * * *"]
-
-# Routes
-routes = [
-  "keendreams.terry-c67.workers.dev/*"
-]
 
 # Performance settings
 [build]
