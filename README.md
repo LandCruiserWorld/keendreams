@@ -48,12 +48,16 @@ This is a **showcase of what's possible** when you build entirely on Cloudflare'
 - 🥦 **Cloudflare KV** - Distributed key-value storage with global replication
 - 📄 **Cloudflare Pages** - Static site hosting with instant deploys
 
-**Network Statistics**:
+<details>
+<summary><strong>Network Statistics</strong> (Click to expand)</summary>
+
 - 🍅 **6 trillion requests/day** - Handles scale you can't outgrow
 - 🌍 **330+ cities globally** - Edge compute everywhere
 - ⚡ **95% of Internet users** within 50ms latency
 - 💰 **$0 egress fees** - Unlike AWS ($0.09/GB), Cloudflare charges nothing for bandwidth
 - 🚀 **0ms cold starts** - Tested on production traffic at massive scale
+
+</details>
 
 **Cost Structure** (In Terms of Dreams):
 - **Free Tier**: 100,000 requests/day (3M/month) + 10GB storage
@@ -190,7 +194,8 @@ wrangler deploy
 
 That's it! Your semantic search API is now running globally. 🎉
 
-### 💎 What You Just Got (Free Tier Value)
+<details>
+<summary><strong>💎 What You Just Got (Free Tier Value)</strong> (Click to expand)</summary>
 
 When you clicked deploy, Cloudflare created:
 
@@ -207,6 +212,8 @@ When you clicked deploy, Cloudflare created:
 | **TOTAL** | **~$1,300/month** | **$0/month** | Same infrastructure |
 
 **This is democratization in action.** What used to require a DevOps team and enterprise budget is now accessible to anyone with an idea.
+
+</details>
 
 > 💡 **What This Free Infrastructure Enables** (AI Cloud Memory In Action):
 >
@@ -484,7 +491,8 @@ The development server runs at `http://localhost:8787` with hot reload enabled.
 
 ---
 
-## 🌟 Why Cloudflare Workers?
+<details>
+<summary><strong>🌟 Why Cloudflare Workers?</strong> (Click to expand)</summary>
 
 **Traditional Approach**:
 - 🐌 Cold starts (Lambda: 100-1000ms)
@@ -516,6 +524,8 @@ The development server runs at `http://localhost:8787` with hot reload enabled.
 **Performance Benchmark**:
 - AWS Lambda (us-east-1 from Europe): ~320ms total
 - Cloudflare Workers (nearest edge): **~32ms** (10x faster)
+
+</details>
 
 ---
 
@@ -552,6 +562,9 @@ Search support tickets and knowledge base articles semantically for faster resol
 ### Complete User Data Isolation ✅
 
 **This is NOT a SaaS service** - When you deploy KeenDreams, you create an isolated instance in YOUR Cloudflare account.
+
+<details>
+<summary><strong>See Data Isolation Diagram</strong> (Click to expand)</summary>
 
 ```mermaid
 graph TB
@@ -591,6 +604,8 @@ graph TB
     note1["🌍 KEY POINT:<br/>This is NOT a SaaS service!<br/>Each deployment is 100% isolated in YOUR Cloudflare account.<br/>The original developer has ZERO access to your infrastructure or data."]
     style note1 fill:#ffebee,stroke:#c62828,stroke-width:3px,font-weight:bold
 ```
+
+</details>
 
 **You control your own infrastructure**:
 - ✅ **Your own KV namespaces** - Data stored in your account only
