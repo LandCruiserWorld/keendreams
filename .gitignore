@@ -12,8 +12,9 @@ NEXT_DREAM.md
 .dev.vars
 .env
 .env.local
-wrangler.toml
 wrangler.toml.backup
+# Note: wrangler.toml IS tracked (with placeholders) for Cloudflare Deploy Button
+# Users should not commit their personal wrangler.toml with real IDs
 
 # 📦 Dependencies (can be reinstalled)
 node_modules/
