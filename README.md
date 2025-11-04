@@ -514,30 +514,30 @@ The development server runs at `http://localhost:8787` with hot reload enabled.
 ---
 
 <details>
-<summary><strong>🌟 Why Cloudflare Workers?</strong> (Click to expand)</summary>
+<summary><strong>Why Cloudflare Workers?</strong> (Click to expand)</summary>
 
 **Traditional Approach**:
-- 🐌 Cold starts (Lambda: 100-1000ms)
-- 💸 High costs at scale ($20/1M requests)
+- Cold starts (Lambda: 100-1000ms)
+- High costs at scale ($20/1M requests)
 - Single region = high latency
-- 🔧 Complex infrastructure management
+- Complex infrastructure management
 - Limited bundle sizes
 
 **Cloudflare Workers**:
-- ⚡ Zero cold starts (tested on 6 trillion requests/day)
-- 💰 $0.50/1M requests (10x cheaper)
+- Zero cold starts (tested on 6 trillion requests/day)
+- $0.50/1M requests (10x cheaper)
 - 330+ edge locations globally
-- 🎯 One command deployment
+- One command deployment
 - Unlimited bundle size (with modules)
 
 **Real Numbers** (Official Cloudflare Statistics):
-- 🍅 **330+ cities** in Cloudflare's global network
+- **330+ cities** in Cloudflare's global network
 - **95% of Internet users** within 50ms of a Cloudflare data center
 - **6 trillion requests per day** handled globally (20% of all web traffic)
-- ⚡ **441% faster** than AWS Lambda at P95 latency
-- 💰 **96.8% cheaper** than AWS S3 for storage with high egress (R2 vs S3)
-- 🔥 **0ms cold starts** vs AWS Lambda's 100-1000ms
-- 💸 **$0 egress fees** vs AWS's $0.09/GB
+- **441% faster** than AWS Lambda at P95 latency
+- **96.8% cheaper** than AWS S3 for storage with high egress (R2 vs S3)
+- **0ms cold starts** vs AWS Lambda's 100-1000ms
+- **$0 egress fees** vs AWS's $0.09/GB
 
 **Cost Comparison** (10TB storage + 50TB monthly transfer):
 - AWS S3: $4,730/month
