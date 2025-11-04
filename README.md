@@ -642,7 +642,7 @@ See [SECURITY.md](./SECURITY.md) for detailed security architecture, data isolat
 
 ## 🚢 Roadmap
 
-- [ ] **Real-time subscriptions** - WebSocket support for live updates
+- [ ] **Real-time** - WebSocket support for live updates
 - [ ] **Multi-tenancy** - Support for team workspaces
 - [ ] **Advanced filters** - Date ranges, project tags, custom metadata
 - [ ] **Export/Import** - Backup and restore entire knowledge bases
