@@ -1,4 +1,4 @@
-# 💭 KeenDreams - Vectorized Cloud Memory
+# 💭 KeenDreams - AI Vectorized Cloud Memory
 
 <div align="center">
 
@@ -6,7 +6,7 @@
 
 </div>
 
-> Vector semantic search at the edge powered by Cloudflare Vectorize. Store, search, and restore development context with natural language. 768-dimensional embeddings running across 330+ cities globally. Your code sessions, captured and ready to explore.
+> Vector semantic search at the edge powered by Cloudflare Workers. Store, search, and restore development context with natural language. 768-dimensional embeddings running across 330+ cities globally. Your code sessions, captured and ready to explore.
 
 [![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/LandCruiserWorld/keendreams)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
@@ -144,7 +144,7 @@ sequenceDiagram
     autonumber
     participant You as 👤 You
     participant GitHub as 📦 GitHub
-    participant CF as ☁️ Cloudflare
+    participant CF as 🧠 Cloudflare
     participant World as 🌍 330+ Cities
 
     Note over You,World: Total time: ~30 seconds
@@ -345,12 +345,12 @@ KeenDreams runs entirely at the edge - here's how:
 flowchart TB
     subgraph User["👤 Your Experience"]
         A[Click Deploy Button 🚀]
-        B[Sign in to Cloudflare ☁️]
+        B[Sign in to Cloudflare 🧠]
         C[Resources Auto-Created ⚙️]
         D[Your API Live Globally 🌍]
     end
 
-    subgraph Cloudflare["☁️ Cloudflare Platform<br/>(Your Account - YOU Control Everything)"]
+    subgraph Cloudflare["🧠 Cloudflare Platform<br/>(Your Account - YOU Control Everything)"]
         E[Cloudflare Workers 🏃<br/>Runs at 330+ locations worldwide]
         F[Vectorize 💭<br/>AI-powered semantic search]
         G[KV Storage 🥦<br/>Fast key-value database]
