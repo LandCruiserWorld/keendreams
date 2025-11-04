@@ -49,12 +49,18 @@ This is a **showcase of what's possible** when you build entirely on Cloudflare'
 - 💰 **$0 egress fees** - Unlike AWS ($0.09/GB), Cloudflare charges nothing for bandwidth
 - 🚀 **0ms cold starts** - Tested on production traffic at massive scale
 
-**Cost Structure**:
+**Cost Structure** (In Terms of Dreams):
 - **Free Tier**: 100,000 requests/day (3M/month) + 10GB storage
-  - **Covers**: Most personal projects, hobby apps, MVPs, and even small commercial sites
-  - **Examples**: Portfolio sites, personal blogs, small APIs, prototype apps
-  - **Real Usage**: 3M requests/month = ~1 request/second sustained - plenty for most startups
-- **Paid Tier**: Only $5/month for 10M additional requests
+  - **In Dream Terms**: Store ~500,000 development sessions + search them 3 million times/month
+  - **Real-World Usage**:
+    - Solo developer: 5 dreams/day = 150/month → **Will never hit limits** ✅
+    - Small team (10 devs): 50 dreams/day = 1,500/month → **Still free** ✅
+    - Growing team (50 devs): 250 dreams/day = 7,500/month → **Still free** ✅
+    - Even 100-person eng team: ~1,000 dreams/day → **Free for years** ✅
+  - **Search Operations**: 3M/month = 100,000/day = enough for 1,000+ developers searching constantly
+- **Storage Reality**: 10GB = ~500,000 dreams (avg 20KB each with embeddings)
+  - **Timeline**: At 10 dreams/day, takes **137 years** to fill 10GB ⏰
+- **Paid Tier**: Only $5/month for 10M additional requests (if you somehow exceed free tier)
   - **No egress fees** = no surprise bills (AWS charges $0.09/GB for data transfer)
   - **Predictable costs** = sleep well knowing viral traffic won't bankrupt you
 - **Compare**: AWS Lambda + DynamoDB + Pinecone = $50-150/month for equivalent performance
@@ -196,13 +202,19 @@ When you clicked deploy, Cloudflare created:
 
 **This is democratization in action.** What used to require a DevOps team and enterprise budget is now accessible to anyone with an idea.
 
-> 💡 **Free Tier Reality Check**: 100,000 requests/day + 10GB storage handles:
-> - Personal portfolio getting 1,000 visitors/day ✅
-> - Small SaaS with 500 active users ✅
-> - Blog with 50,000 monthly pageviews ✅
-> - API serving 3 million requests/month ✅
+> 💡 **Free Tier Reality Check** (In Dream Storage Terms):
 >
-> Most personal AND commercial projects never leave the free tier. If you do grow beyond it, you'll have revenue to cover the $5/month.
+> **Personal Use**:
+> - Capturing 5 dreams/day for 10 years = 18,250 dreams → Uses **0.36GB** (3.6% of storage) ✅
+> - 100 searches/day for 10 years → Uses **36.5M requests** (1.2% of monthly allowance) ✅
+>
+> **Team Use**:
+> - 20-person engineering team capturing 100 dreams/day → **Still free** ✅
+> - Entire company searching 10,000 times/day → **Still free** ✅
+>
+> **The Math**: Even capturing 10 dreams/day (aggressive for solo dev), you'd need **137 years** to fill 10GB storage.
+>
+> Most personal AND commercial projects never leave the free tier. If you somehow do grow beyond it, you'll have revenue to cover the $5/month.
 
 ---
 
