@@ -7,7 +7,7 @@
 [![Cloudflare Workers](https://img.shields.io/badge/Cloudflare-Workers-orange)](https://workers.cloudflare.com/)
 [![Vectorize](https://img.shields.io/badge/Cloudflare-Vectorize-blue)](https://developers.cloudflare.com/vectorize/)
 
-[Demo](https://keen.terryrichards.dev) • [Documentation](./docs) • [API Reference](./docs/API.md) • [Deploy Guide](./docs/CLOUDFLARE_DEPLOYMENT.md)
+[Demo](https://keen.terryrichards.dev) • [Documentation](./docs) • [API Reference](./docs/api/API.md) • [Deploy Guide](./docs/guides/DEPLOYMENT.md)
 
 ---
 
@@ -99,7 +99,7 @@ Fork this repo and you'll have:
 - 🧠 Personal knowledge management
 - 📊 Content recommendation engines
 
-See [TEMPLATE_GUIDE.md](./docs/TEMPLATE_GUIDE.md) for adaptation examples.
+See [Template Guide](./docs/guides/TEMPLATE_GUIDE.md) for adaptation examples.
 
 ---
 
@@ -209,19 +209,29 @@ KeenDreams is built on Cloudflare's edge infrastructure for maximum performance:
 5. Metadata enriched from KV storage
 6. Results returned in <50ms
 
-See [ARCHITECTURE.md](./docs/ARCHITECTURE.md) for detailed documentation.
+See [Architecture Documentation](./docs/architecture/ARCHITECTURE.md) for detailed information.
 
 ---
 
 ## 📚 Documentation
 
-- 📘 [API Reference](./docs/API.md) - Complete endpoint documentation
-- 🚀 [Deployment Guide](./docs/CLOUDFLARE_DEPLOYMENT.md) - Production setup walkthrough
-- 🏗️ [Architecture Overview](./docs/ARCHITECTURE.md) - System design details
-- 🎨 [Template Guide](./docs/TEMPLATE_GUIDE.md) - Adapt for your use case
-- 🔧 [Configuration](./docs/CONFIGURATION.md) - Environment variables and settings
-- 🧪 [Testing Guide](./docs/TESTING.md) - Local development and testing
-- 📊 [Performance Tuning](./docs/PERFORMANCE.md) - Optimization strategies
+### 📖 Guides
+- 🚀 [Deployment Guide](./docs/guides/DEPLOYMENT.md) - Production setup walkthrough
+- 🎨 [Template Guide](./docs/guides/TEMPLATE_GUIDE.md) - Adapt for your use case
+- 🧠 [Semantic Search Guide](./docs/guides/SEMANTIC_SEARCH.md) - AI-powered search usage
+
+### 📘 API & Architecture
+- 📘 [API Reference](./docs/api/API.md) - Complete endpoint documentation
+- 🏗️ [Architecture Overview](./docs/architecture/ARCHITECTURE.md) - System design details
+- 🔐 [Security Audit](./docs/architecture/SECURITY_AUDIT.md) - Security review and best practices
+
+### 🎯 Examples
+- 🆕 [Basic Setup](./examples/basic-setup/) - Get started in 5 minutes
+- 📦 [More Examples](./examples/) - Additional use cases
+
+### 🤝 Contributing
+- [Contributing Guide](./CONTRIBUTING.md) - How to contribute
+- [Changelog](./CHANGELOG.md) - Version history
 
 ---
 
@@ -252,7 +262,7 @@ wrangler secret put BEARER_TOKEN
 wrangler publish --route "api.yourdomain.com/*"
 ```
 
-See [CLOUDFLARE_DEPLOYMENT.md](./docs/CLOUDFLARE_DEPLOYMENT.md) for advanced configurations.
+See [Deployment Guide](./docs/guides/DEPLOYMENT.md) for advanced configurations.
 
 ---
 

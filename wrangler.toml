@@ -1,5 +1,5 @@
 name = "keendreams"
-main = "keendreams-worker.js"
+main = "src/worker.js"
 compatibility_date = "2024-01-01"
 
 # Custom domain routing (optional)
@@ -25,13 +25,13 @@ id = "your_cache_kv_namespace_id"  # Replace with your cache KV namespace ID
 # Environment variables (secret will be set via wrangler secret)
 # Note: API key should be set as secret, not var for security
 
-# Cron trigger for cache warming (every 5 minutes)
+# Cron trigger for cache warming (optional)
 [triggers]
 crons = ["*/5 * * * *"]
 
 # Performance settings
 [build]
 command = ""
-watch_paths = ["keendreams-worker.js"]
+watch_paths = ["src/worker.js"]
 
 # Simple configuration without experimental rules
