@@ -100,7 +100,7 @@ crons = ["*/5 * * * *"]
 ### CLI Script Usage
 ```bash
 # Set environment variables
-export KEENDREAMS_URL="https://keendreams.terry-c67.workers.dev"
+export KEENDREAMS_URL="https://your-worker.workers.dev"
 export KEENDREAMS_API_KEY="your_api_key_here"
 
 # Use the claude-dream.sh script
@@ -112,7 +112,7 @@ export KEENDREAMS_API_KEY="your_api_key_here"
 ### Direct API Usage
 ```javascript
 // Fetch dreams
-const response = await fetch('https://keendreams.terry-c67.workers.dev/analyze-dreams', {
+const response = await fetch('https://your-worker.workers.dev/analyze-dreams', {
   headers: {
     'X-API-Key': 'your_api_key_here'
   }
@@ -126,7 +126,7 @@ const dreamData = {
   context: { /* project context */ }
 };
 
-await fetch('https://keendreams.terry-c67.workers.dev/dream', {
+await fetch('https://your-worker.workers.dev/dream', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
@@ -146,7 +146,7 @@ await fetch('https://keendreams.terry-c67.workers.dev/dream', {
 
 ### Health Check
 ```bash
-curl https://keendreams.terry-c67.workers.dev/health
+curl https://your-worker.workers.dev/health
 ```
 
 ## 🔒 Security

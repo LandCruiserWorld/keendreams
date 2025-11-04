@@ -2,9 +2,9 @@
 
 > **A persistent memory system that turns your development projects into lasting digital dreams**
 
-[![Status](https://img.shields.io/badge/status-production-green.svg)](https://keendreams.terry-c67.workers.dev/health)
-[![Dreams](https://img.shields.io/badge/dreams-177+-blue.svg)](https://keendreams.terry-c67.workers.dev/stats)
-[![Projects](https://img.shields.io/badge/projects-17+-purple.svg)](https://keendreams.terry-c67.workers.dev/projects)
+[![Status](https://img.shields.io/badge/status-production-green.svg)](https://your-worker.workers.dev/health)
+[![Dreams](https://img.shields.io/badge/dreams-177+-blue.svg)](https://your-worker.workers.dev/stats)
+[![Projects](https://img.shields.io/badge/projects-17+-purple.svg)](https://your-worker.workers.dev/projects)
 
 ## ✨ What is KeenDreams?
 
@@ -23,7 +23,7 @@ KeenDreams is your **digital memory bank** - a cloud-based system that captures,
 
 ### 1. Environment Setup
 ```bash
-export KEENDREAMS_URL="https://keendreams.terry-c67.workers.dev"
+export KEENDREAMS_URL="https://your-worker.workers.dev"
 export KEENDREAMS_API_KEY="your_secure_api_key"
 ```
 
@@ -107,10 +107,10 @@ Your KeenDreams system currently contains:
 Both methods supported for maximum compatibility:
 ```bash
 # X-API-Key (recommended for CLI)
-curl -H "X-API-Key: your_key" https://keendreams.terry-c67.workers.dev/dreams
+curl -H "X-API-Key: your_key" https://your-worker.workers.dev/dreams
 
 # Bearer Token (for web applications)  
-curl -H "Authorization: Bearer your_key" https://keendreams.terry-c67.workers.dev/dreams
+curl -H "Authorization: Bearer your_key" https://your-worker.workers.dev/dreams
 ```
 
 ## 🛡️ Security & Reliability
@@ -164,12 +164,12 @@ This script handles:
 
 ### Health Check
 ```bash
-curl https://keendreams.terry-c67.workers.dev/health
+curl https://your-worker.workers.dev/health
 ```
 
 ### System Stats
 ```bash
-curl -H "X-API-Key: your_key" https://keendreams.terry-c67.workers.dev/stats | jq
+curl -H "X-API-Key: your_key" https://your-worker.workers.dev/stats | jq
 ```
 
 ### Real-time Logs
@@ -185,9 +185,9 @@ Run the comprehensive test suite:
 ./deploy-keendreams.sh
 
 # Manual endpoint testing
-curl https://keendreams.terry-c67.workers.dev/health
-curl -H "X-API-Key: your_key" https://keendreams.terry-c67.workers.dev/stats
-curl -H "X-API-Key: your_key" https://keendreams.terry-c67.workers.dev/dreams?limit=5
+curl https://your-worker.workers.dev/health
+curl -H "X-API-Key: your_key" https://your-worker.workers.dev/stats
+curl -H "X-API-Key: your_key" https://your-worker.workers.dev/dreams?limit=5
 ```
 
 ## 📚 Use Cases
@@ -211,7 +211,7 @@ curl -H "X-API-Key: your_key" https://keendreams.terry-c67.workers.dev/dreams?li
 #### Dreams Not Loading
 ```bash
 # Check authentication
-curl -H "X-API-Key: your_key" https://keendreams.terry-c67.workers.dev/health
+curl -H "X-API-Key: your_key" https://your-worker.workers.dev/health
 
 # Verify KV namespaces
 wrangler kv namespace list
@@ -273,7 +273,7 @@ KeenDreams isn't just storage - it's **digital consciousness**. It remembers you
 
 <div align="center">
 
-**[Live Demo](https://keendreams.terry-c67.workers.dev)** • **[API Status](https://keendreams.terry-c67.workers.dev/health)** • **[Documentation](./KEENDREAMS_DOCUMENTATION.md)**
+**[Live Demo](https://your-worker.workers.dev)** • **[API Status](https://your-worker.workers.dev/health)** • **[Documentation](./KEENDREAMS_DOCUMENTATION.md)**
 
 *Built with ❤️ using Cloudflare Workers, KV Storage, and lots of coffee* ☕
 

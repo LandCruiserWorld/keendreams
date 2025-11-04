@@ -54,7 +54,7 @@ Check API health status.
 
 **Example**:
 ```bash
-curl "https://keendreams.terry-c67.workers.dev/health"
+curl "https://your-worker.workers.dev/health"
 ```
 
 ---
@@ -88,7 +88,7 @@ Get system statistics including vectorize metrics and storage usage.
 
 **Example**:
 ```bash
-curl "https://keendreams.terry-c67.workers.dev/stats" \
+curl "https://your-worker.workers.dev/stats" \
   -H "Authorization: Bearer YOUR_API_KEY"
 ```
 
@@ -108,7 +108,7 @@ Store a new development session (dream) with automatic embedding generation.
 ```json
 {
   "projectName": "my-api-project",
-  "projectPath": "/Users/terry/my-api-project",
+  "projectPath": "/Users/your-username/my-api-project",
   "summary": "Implemented user authentication with JWT tokens",
   "techStack": ["Node.js", "Express", "PostgreSQL", "JWT"],
   "completedTasks": [
@@ -151,12 +151,12 @@ Store a new development session (dream) with automatic embedding generation.
 
 **Example**:
 ```bash
-curl -X POST "https://keendreams.terry-c67.workers.dev/dream" \
+curl -X POST "https://your-worker.workers.dev/dream" \
   -H "Authorization: Bearer YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
     "projectName": "my-api-project",
-    "projectPath": "/Users/terry/my-api-project",
+    "projectPath": "/Users/your-username/my-api-project",
     "summary": "Implemented user authentication",
     "techStack": ["Node.js", "Express"],
     "completedTasks": ["Created auth endpoints"],
@@ -180,7 +180,7 @@ List all projects with their dream counts and metadata.
   "projects": [
     {
       "name": "my-api-project",
-      "path": "/Users/terry/my-api-project",
+      "path": "/Users/your-username/my-api-project",
       "dreamCount": 5,
       "lastUpdated": "2025-11-04T10:30:00.000Z",
       "techStack": ["Node.js", "Express", "PostgreSQL"],
@@ -194,7 +194,7 @@ List all projects with their dream counts and metadata.
 
 **Example**:
 ```bash
-curl "https://keendreams.terry-c67.workers.dev/projects" \
+curl "https://your-worker.workers.dev/projects" \
   -H "Authorization: Bearer YOUR_API_KEY"
 ```
 
@@ -223,7 +223,7 @@ Search dreams by semantic similarity using natural language queries.
       "dream": {
         "dreamId": "20251103_143000",
         "projectName": "my-api-project",
-        "projectPath": "/Users/terry/my-api-project",
+        "projectPath": "/Users/your-username/my-api-project",
         "summary": "Fixed JWT token expiration issue",
         "techStack": ["Node.js", "Express", "JWT"],
         "completedTasks": ["Fixed token refresh logic"],
@@ -263,11 +263,11 @@ Search dreams by semantic similarity using natural language queries.
 **Example**:
 ```bash
 # Basic search
-curl "https://keendreams.terry-c67.workers.dev/api/memory/search?q=authentication+bug&limit=5" \
+curl "https://your-worker.workers.dev/api/memory/search?q=authentication+bug&limit=5" \
   -H "Authorization: Bearer YOUR_API_KEY"
 
 # Advanced search with filters
-curl "https://keendreams.terry-c67.workers.dev/api/memory/search?q=react+hooks&limit=10&minScore=0.6&projectPath=/Users/terry/my-react-app" \
+curl "https://your-worker.workers.dev/api/memory/search?q=react+hooks&limit=10&minScore=0.6&projectPath=/Users/your-username/my-react-app" \
   -H "Authorization: Bearer YOUR_API_KEY"
 ```
 
@@ -327,7 +327,7 @@ Find dreams similar to a specific dream by comparing embeddings.
 
 **Example**:
 ```bash
-curl "https://keendreams.terry-c67.workers.dev/api/memory/similar/20251103_143000?limit=3" \
+curl "https://your-worker.workers.dev/api/memory/similar/20251103_143000?limit=3" \
   -H "Authorization: Bearer YOUR_API_KEY"
 ```
 
@@ -368,7 +368,7 @@ Generate embedding vector for text (testing/debugging).
 
 **Example**:
 ```bash
-curl -X POST "https://keendreams.terry-c67.workers.dev/api/memory/encode" \
+curl -X POST "https://your-worker.workers.dev/api/memory/encode" \
   -H "Authorization: Bearer YOUR_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{"text":"Implemented user authentication with JWT tokens"}'
@@ -407,11 +407,11 @@ Backfill embeddings for existing dreams that don't have them.
 **Example**:
 ```bash
 # Reindex all dreams
-curl -X POST "https://keendreams.terry-c67.workers.dev/api/memory/reindex" \
+curl -X POST "https://your-worker.workers.dev/api/memory/reindex" \
   -H "Authorization: Bearer YOUR_API_KEY"
 
 # Only index dreams without embeddings
-curl -X POST "https://keendreams.terry-c67.workers.dev/api/memory/reindex?onlyMissing=true" \
+curl -X POST "https://your-worker.workers.dev/api/memory/reindex?onlyMissing=true" \
   -H "Authorization: Bearer YOUR_API_KEY"
 ```
 
@@ -450,7 +450,7 @@ KeenDreams runs on Cloudflare's free tier with the following limits:
 Find all previous work related to your current project:
 
 ```bash
-curl "https://keendreams.terry-c67.workers.dev/api/memory/search?q=my-api-project&limit=10" \
+curl "https://your-worker.workers.dev/api/memory/search?q=my-api-project&limit=10" \
   -H "Authorization: Bearer YOUR_API_KEY"
 ```
 
@@ -461,7 +461,7 @@ curl "https://keendreams.terry-c67.workers.dev/api/memory/search?q=my-api-projec
 Search for how you solved similar problems:
 
 ```bash
-curl "https://keendreams.terry-c67.workers.dev/api/memory/search?q=database+connection+timeout&minScore=0.6" \
+curl "https://your-worker.workers.dev/api/memory/search?q=database+connection+timeout&minScore=0.6" \
   -H "Authorization: Bearer YOUR_API_KEY"
 ```
 
@@ -472,7 +472,7 @@ curl "https://keendreams.terry-c67.workers.dev/api/memory/search?q=database+conn
 Find all projects using specific technologies:
 
 ```bash
-curl "https://keendreams.terry-c67.workers.dev/api/memory/search?q=react+typescript+hooks&limit=20" \
+curl "https://your-worker.workers.dev/api/memory/search?q=react+typescript+hooks&limit=20" \
   -H "Authorization: Bearer YOUR_API_KEY"
 ```
 
@@ -484,7 +484,7 @@ Discover recurring patterns in your development:
 
 ```bash
 # Find all authentication-related work
-curl "https://keendreams.terry-c67.workers.dev/api/memory/search?q=user+authentication+authorization&limit=15" \
+curl "https://your-worker.workers.dev/api/memory/search?q=user+authentication+authorization&limit=15" \
   -H "Authorization: Bearer YOUR_API_KEY"
 ```
 
@@ -496,7 +496,7 @@ Find sessions related to your last work:
 
 ```bash
 # Get similar sessions to a specific dream
-curl "https://keendreams.terry-c67.workers.dev/api/memory/similar/20251103_143000?limit=5" \
+curl "https://your-worker.workers.dev/api/memory/similar/20251103_143000?limit=5" \
   -H "Authorization: Bearer YOUR_API_KEY"
 ```
 
@@ -625,7 +625,7 @@ interface SearchResult {
 
 ```javascript
 const KEENDREAMS_API_KEY = process.env.KEENDREAMS_API_KEY;
-const BASE_URL = 'https://keendreams.terry-c67.workers.dev';
+const BASE_URL = 'https://your-worker.workers.dev';
 
 async function searchDreams(query, limit = 10) {
   const response = await fetch(
@@ -671,7 +671,7 @@ import os
 import requests
 
 KEENDREAMS_API_KEY = os.getenv('KEENDREAMS_API_KEY')
-BASE_URL = 'https://keendreams.terry-c67.workers.dev'
+BASE_URL = 'https://your-worker.workers.dev'
 
 def search_dreams(query, limit=10, min_score=0.5):
     headers = {'Authorization': f'Bearer {KEENDREAMS_API_KEY}'}
@@ -711,7 +711,7 @@ print(f"Found {results['count']} dreams")
 #!/bin/bash
 
 KEENDREAMS_API_KEY="YOUR_API_KEY"
-BASE_URL="https://keendreams.terry-c67.workers.dev"
+BASE_URL="https://your-worker.workers.dev"
 
 # Search function
 search_dreams() {
@@ -774,11 +774,11 @@ search_dreams "authentication" 5
 **Solution**:
 ```bash
 # Reindex all dreams
-curl -X POST "https://keendreams.terry-c67.workers.dev/api/memory/reindex" \
+curl -X POST "https://your-worker.workers.dev/api/memory/reindex" \
   -H "Authorization: Bearer YOUR_API_KEY"
 
 # Check stats
-curl "https://keendreams.terry-c67.workers.dev/stats" \
+curl "https://your-worker.workers.dev/stats" \
   -H "Authorization: Bearer YOUR_API_KEY" | jq '.vectorize.indexed'
 ```
 
@@ -815,7 +815,7 @@ curl "https://keendreams.terry-c67.workers.dev/stats" \
 
 ## Support & Resources
 
-**API Base URL**: `https://keendreams.terry-c67.workers.dev`
+**API Base URL**: `https://your-worker.workers.dev`
 
 **Documentation**: This document
 

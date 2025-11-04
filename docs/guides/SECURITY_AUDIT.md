@@ -36,7 +36,7 @@ This security audit identified **CRITICAL SECURITY VULNERABILITIES** across mult
   ```
 - **Line 140:** API key used in curl test command
   ```bash
-  test_endpoint "https://keendreams.terry-c67.workers.dev/stats" "ce07bf20b2f511955b11731c62937601097e75e278fe5d63f3da9240d93279fa"
+  test_endpoint "https://your-worker.workers.dev/stats" "ce07bf20b2f511955b11731c62937601097e75e278fe5d63f3da9240d93279fa"
   ```
 - **Line 144:** API key in Authorization header
   ```bash
@@ -123,7 +123,7 @@ Create `wrangler.toml.example` with placeholders for documentation.
 ### 3. PRIVATE WORKER URLs - 🟡 MEDIUM RISK
 
 **Exposed URLs:**
-- `https://keendreams.terry-c67.workers.dev`
+- `https://your-worker.workers.dev`
 - `terryrichards.dev/*`
 
 **Locations Found:**
@@ -314,7 +314,7 @@ test_endpoint "$WORKER_URL/health" "" "Health check"
 
 Update documentation with examples:
 ```markdown
-# Instead of: https://keendreams.terry-c67.workers.dev
+# Instead of: https://your-worker.workers.dev
 # Use: https://your-worker.YOUR-SUBDOMAIN.workers.dev
 ```
 

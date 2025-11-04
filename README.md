@@ -4,6 +4,7 @@
 
 [![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/LandCruiserWorld/keendreams)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Security: Complete User Isolation](https://img.shields.io/badge/Security-Complete_User_Isolation-green.svg)](./SECURITY.md)
 [![Cloudflare Workers](https://img.shields.io/badge/Cloudflare-Workers-orange)](https://workers.cloudflare.com/)
 [![Vectorize](https://img.shields.io/badge/Cloudflare-Vectorize-blue)](https://developers.cloudflare.com/vectorize/)
 
@@ -340,15 +341,31 @@ Search support tickets and knowledge base articles semantically for faster resol
 
 ---
 
-## 🔒 Security
+## 🔒 Security & Privacy
+
+### Complete User Data Isolation ✅
+
+**You control your own infrastructure** - When you deploy KeenDreams, you create an isolated instance in YOUR Cloudflare account:
+
+- ✅ **Your own KV namespaces** - Data stored in your account only
+- ✅ **Your own Vectorize index** - Embeddings in your infrastructure
+- ✅ **Your own Worker deployment** - Running on your edge network
+- ✅ **Your own API keys** - Secrets controlled by you
+- ✅ **Zero access by repository maintainers** - Complete isolation
+
+**This is NOT a SaaS** - Each deployment is fully isolated. The original developer has no access to your data, workers, or infrastructure.
+
+### Security Features
 
 - 🔐 Bearer token authentication required for all endpoints
 - 🛡️ Built-in DDoS protection via Cloudflare
 - 🔒 HTTPS enforced everywhere
 - 🚫 Rate limiting configurable
 - 📊 Audit logging available
+- 🔍 Open source - Audit the code yourself
+- 🏗️ Distributed architecture - No central point of failure
 
-See [SECURITY.md](./SECURITY.md) for security best practices and reporting vulnerabilities.
+See [SECURITY.md](./SECURITY.md) for detailed security architecture, data isolation verification, and vulnerability reporting.
 
 ---
 

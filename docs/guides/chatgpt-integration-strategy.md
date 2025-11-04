@@ -7,7 +7,7 @@ Dreams are stored as structured JSON objects that are highly LLM-readable:
 ```json
 {
   "id": "dream_20241213_143022_xyz",
-  "projectPath": "/Users/terry/my-project",
+  "projectPath": "/Users/your-username/my-project",
   "projectName": "My Project",
   "timestamp": "2024-12-13T14:30:22.123Z",
   "context": {

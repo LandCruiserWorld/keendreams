@@ -5,9 +5,9 @@
 ### **Claude Desktop - LOCAL ACCESS ✅**
 
 **Data Sources Found:**
-- **SQLite Database**: `/Users/terry/Library/HTTPStorages/com.anthropic.claudefordesktop/httpstorages.sqlite`
-- **LevelDB**: `/Users/terry/Library/Application Support/Claude/Local Storage/leveldb/`
-- **Session Storage**: `/Users/terry/Library/Application Support/Claude/Session Storage/` (LevelDB)
+- **SQLite Database**: `/Users/your-username/Library/HTTPStorages/com.anthropic.claudefordesktop/httpstorages.sqlite`
+- **LevelDB**: `/Users/your-username/Library/Application Support/Claude/Local Storage/leveldb/`
+- **Session Storage**: `/Users/your-username/Library/Application Support/Claude/Session Storage/` (LevelDB)
 
 **Access Method**: ✅ **DIRECT LOCAL ACCESS**
 - All conversations stored locally in readable databases
@@ -146,7 +146,7 @@ function convertClaudeToDream(conversation: ClaudeConversation): DreamData {
     conversations.forEach(async conv => {
       const dream = convertClaudeToDream(conv);
       
-      await fetch('https://keendreams.terry-c67.workers.dev/import/claude', {
+      await fetch('https://your-worker.workers.dev/import/claude', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -171,7 +171,7 @@ function convertClaudeToDream(conversation: ClaudeConversation): DreamData {
 
 ```bash
 # 1. Create extraction script
-curl -o extract-claude-chats.sh https://keendreams.terry-c67.workers.dev/scripts/claude-extractor.sh
+curl -o extract-claude-chats.sh https://your-worker.workers.dev/scripts/claude-extractor.sh
 chmod +x extract-claude-chats.sh
 
 # 2. Extract all conversations
@@ -184,7 +184,7 @@ node convert-claude-to-dreams.js claude-export.json
 curl -X POST -H "Authorization: Bearer YOUR_KEY" \\
   -H "Content-Type: application/json" \\
   -d @claude-dreams.json \\
-  https://keendreams.terry-c67.workers.dev/import/claude-bulk
+  https://your-worker.workers.dev/import/claude-bulk
 ```
 
 ### For Claude Web (Browser Extension):

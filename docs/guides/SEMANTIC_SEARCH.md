@@ -12,10 +12,10 @@ Your KeenDreams cloud brain now has **AI-powered semantic search**! Search by me
 
 ```bash
 # Search for related work
-/Users/terry/scripts/claude-keen-context.sh search "authentication bug" 5
+/Users/your-username/scripts/claude-keen-context.sh search "authentication bug" 5
 
 # Find similar dreams
-/Users/terry/scripts/claude-keen-context.sh similar "20250913_192325" 3
+/Users/your-username/scripts/claude-keen-context.sh similar "20250913_192325" 3
 ```
 
 ### 2. Direct API Calls
@@ -280,7 +280,7 @@ curl -X POST "https://your-worker.workers.dev/api/memory/reindex" \
 ### Example 1: Resume Context
 ```bash
 # You're working on a project and want to remember what you did last time
-cd /Users/terry/my-project
+cd /Users/your-username/my-project
 claude-keen-context.sh search "$(basename $(pwd))" 5
 ```
 
@@ -322,7 +322,7 @@ claude-keen-context.sh search "authentication" 20 0.7
 ### Project-Scoped Search
 ```bash
 # Search within a specific project
-curl "https://your-worker.workers.dev/api/memory/search?q=bug+fix&projectPath=/Users/terry/my-project" \
+curl "https://your-worker.workers.dev/api/memory/search?q=bug+fix&projectPath=/Users/your-username/my-project" \
   -H "Authorization: Bearer $KEENDREAMS_API_KEY"
 ```
 
