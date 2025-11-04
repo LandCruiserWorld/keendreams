@@ -202,19 +202,26 @@ When you clicked deploy, Cloudflare created:
 
 **This is democratization in action.** What used to require a DevOps team and enterprise budget is now accessible to anyone with an idea.
 
-> 💡 **Free Tier Reality Check** (In Dream Storage Terms):
+> 💡 **What This Free Infrastructure Enables** (AI Cloud Memory In Action):
 >
-> **Personal Use**:
-> - Capturing 5 dreams/day for 10 years = 18,250 dreams → Uses **0.36GB** (3.6% of storage) ✅
-> - 100 searches/day for 10 years → Uses **36.5M requests** (1.2% of monthly allowance) ✅
+> **Personal AI Knowledge Base**:
+> - 10 years of coding sessions (18,000+ dreams) → Searchable with "how did I fix that auth bug?" ✅
+> - Every project you've ever worked on → Instantly recallable with natural language ✅
+> - **Power**: Your entire dev career becomes searchable memory. Find solutions you wrote 3 years ago in seconds.
 >
-> **Team Use**:
-> - 20-person engineering team capturing 100 dreams/day → **Still free** ✅
-> - Entire company searching 10,000 times/day → **Still free** ✅
+> **Team Development Intelligence**:
+> - 20-person team's collective knowledge (2,000 dreams/month) → Shared AI memory ✅
+> - "Who solved the Redis connection timeout?" → AI finds the person and solution ✅
+> - **Power**: Team memory that survives employee turnover. New devs search years of solutions.
 >
-> **The Math**: Even capturing 10 dreams/day (aggressive for solo dev), you'd need **137 years** to fill 10GB storage.
+> **Multi-Project Context Switching**:
+> - Work on 50 different projects → AI remembers your context for each ✅
+> - "What was I working on in the mobile app?" → Instant restoration ✅
+> - **Power**: No more "what was I doing?" when switching projects. AI remembers for you.
 >
-> Most personal AND commercial projects never leave the free tier. If you somehow do grow beyond it, you'll have revenue to cover the $5/month.
+> **The Math**: Even capturing 10 dreams/day, you'd need **137 years** to fill storage. Your development memory is essentially **unlimited**.
+>
+> Most personal AND commercial AI memory systems never leave the free tier. If you somehow do grow beyond it, you'll have revenue to cover $5/month.
 
 ---
 
