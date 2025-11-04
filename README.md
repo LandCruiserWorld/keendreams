@@ -1,6 +1,6 @@
-# 🧠 KeenDreams - AI-Powered Cloud Memory
+# 🧠 KeenDreams - Vectorized Cloud Memory
 
-> Semantic search powered by Cloudflare's edge network. Store, search, and restore development context with natural language. Your code sessions, captured and ready to explore.
+> Vector semantic search at the edge powered by Cloudflare Vectorize. Store, search, and restore development context with natural language. 768-dimensional embeddings running across 330+ cities globally. Your code sessions, captured and ready to explore.
 
 [![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/LandCruiserWorld/keendreams)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
