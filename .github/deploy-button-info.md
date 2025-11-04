@@ -12,14 +12,32 @@ When users click the button in README.md:
 
 ### Automatic Setup Process
 
-1. **User Authentication**: Cloudflare prompts login/signup
-2. **Repository Fork**: Automatically forks to user's GitHub account
-3. **Resource Creation**: Cloudflare creates:
-   - KV namespaces (DREAMS, PROJECTS, KEENDREAMS_KV)
-   - Vectorize index (keendreams-embeddings)
-   - Worker deployment
-4. **Configuration**: Applies settings from `wrangler.toml`
-5. **Deployment**: Worker goes live on Cloudflare's edge network
+**Perfect for users who have NEVER used Cloudflare before:**
+
+1. **User Authentication**:
+   - Cloudflare prompts "Login" or "Create Free Account"
+   - No credit card required for free tier
+   - Complete beginners can sign up in 30 seconds
+
+2. **Repository Fork**:
+   - Automatically forks this repo to user's GitHub account
+   - Creates their own isolated copy
+
+3. **Resource Creation**:
+   - Cloudflare reads `wrangler.toml` (with safe placeholder IDs)
+   - **Automatically creates REAL resources** in user's account:
+     * KV namespaces (DREAMS, PROJECTS, KEENDREAMS_KV)
+     * Vectorize index (keendreams-embeddings, 768 dimensions)
+   - **Replaces placeholder IDs with real resource IDs**
+   - This happens in Cloudflare's system, NOT in git
+
+4. **Worker Deployment**:
+   - Deploys worker code to 275+ edge locations globally
+   - User gets their own URL: `https://keendreams-abc123.workers.dev`
+
+5. **Ready to Use**:
+   - Worker is live and functional immediately
+   - Only remaining step: set personal API key (one command)
 
 ### What Gets Created
 
@@ -44,6 +62,33 @@ The button reads from `wrangler.toml` in the repository root. This file must:
 - ✅ Include all bindings (KV, Vectorize, etc.)
 - ✅ Specify entry point (`main = "src/worker.js"`)
 
+### Security: Why Placeholders Are Safe
+
+**Question**: Is it safe to commit `wrangler.toml` with placeholder IDs?
+
+**Answer**: YES, completely safe. Here's why:
+
+```toml
+# In your public repository - SAFE
+[[kv_namespaces]]
+binding = "DREAMS"
+id = "your_dreams_kv_namespace_id"  # ← Not real, just a placeholder
+```
+
+**What happens during deployment:**
+1. Cloudflare reads the placeholder IDs from your repo
+2. Creates NEW, REAL resources in the user's account
+3. Replaces placeholders with real IDs **in their deployment** (not in git)
+4. The real IDs never appear in any git repository
+
+**Example:**
+- Public repo has: `id = "your_dreams_kv_namespace_id"` ← Safe template
+- User deploys → Cloudflare creates real KV namespace
+- User's worker uses: `id = "a1b2c3d4e5f6..."` ← Real ID, only in Cloudflare
+- User's forked repo still shows: `id = "your_dreams_kv_namespace_id"` ← Still placeholder
+
+**The placeholder IDs are just templates** - like a form with "Enter your name here" fields. They tell Cloudflare what to create, but aren't actual credentials.
+
 ## Benefits
 
 ### For Users
@@ -58,12 +103,35 @@ The button reads from `wrangler.toml` in the repository root. This file must:
 - **Professional image**: Shows modern DevOps knowledge
 - **Cloudflare showcase**: Highlights edge platform benefits
 
-## Limitations
+## What Users Need to Do After Deployment
 
-Users still need to:
-- Generate and set API key secret
-- Understand basic Cloudflare concepts
-- Have a Cloudflare account (free tier works)
+After the automatic deployment completes, users have ONE remaining step:
+
+### Set Their Personal API Key (10 seconds)
+
+```bash
+# Install Wrangler CLI (one-time)
+npm install -g wrangler
+
+# Set your secret API key
+wrangler secret put KEENDREAMS_API_KEY
+# Paste your secure key when prompted
+```
+
+**Why this can't be automated:** API keys are security credentials that cannot be pre-set in public repositories. This is the only manual step, and it's required for security.
+
+**That's it!** The worker is now fully functional with your personal secure API key.
+
+### No Other Setup Required
+
+Users do NOT need to:
+- ❌ Manually create KV namespaces (already created automatically)
+- ❌ Manually create Vectorize index (already created automatically)
+- ❌ Edit wrangler.toml with their IDs (already configured automatically)
+- ❌ Run deployment commands (already deployed automatically)
+- ❌ Understand Cloudflare architecture (works immediately)
+
+The deploy button handles 99% of the work. The 1% that remains is setting your personal API key for security.
 
 ## Similar Projects Using This
 

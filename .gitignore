@@ -13,8 +13,11 @@ NEXT_DREAM.md
 .env
 .env.local
 wrangler.toml.backup
-# Note: wrangler.toml IS tracked (with placeholders) for Cloudflare Deploy Button
-# Users should not commit their personal wrangler.toml with real IDs
+
+# ✅ wrangler.toml IS INTENTIONALLY TRACKED (with safe placeholder IDs)
+# This is REQUIRED for the "Deploy to Cloudflare" button to work.
+# The deploy button reads this file and automatically replaces placeholders
+# with real resource IDs during deployment. You don't need to edit it manually.
 
 # 📦 Dependencies (can be reinstalled)
 node_modules/
