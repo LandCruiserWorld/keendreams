@@ -50,11 +50,16 @@ This is a **showcase of what's possible** when you build entirely on Cloudflare'
 - 🚀 **0ms cold starts** - Tested on production traffic at massive scale
 
 **Cost Structure**:
-- **Free Tier**: 100,000 requests/day (3M/month) - enough for most projects
-- **Paid**: $5/month minimum for Workers + KV + Vectorize
-- **Compare**: AWS Lambda + DynamoDB + Pinecone = $50-150/month for equivalent
+- **Free Tier**: 100,000 requests/day (3M/month) + 10GB storage
+  - **Covers**: Most personal projects, hobby apps, MVPs, and even small commercial sites
+  - **Examples**: Portfolio sites, personal blogs, small APIs, prototype apps
+  - **Real Usage**: 3M requests/month = ~1 request/second sustained - plenty for most startups
+- **Paid Tier**: Only $5/month for 10M additional requests
+  - **No egress fees** = no surprise bills (AWS charges $0.09/GB for data transfer)
+  - **Predictable costs** = sleep well knowing viral traffic won't bankrupt you
+- **Compare**: AWS Lambda + DynamoDB + Pinecone = $50-150/month for equivalent performance
 
-> **This democratizes enterprise infrastructure.** What Fortune 500 companies spent millions on is now free for students, hobbyists, and small businesses. That's Cloudflare's mission: help build a better Internet.
+> **This democratizes enterprise infrastructure.** What Fortune 500 companies spent millions on is now free for students, hobbyists, and small businesses. Even moderate commercial use cases stay on the free tier. That's Cloudflare's mission: help build a better Internet.
 
 ---
 
@@ -190,6 +195,14 @@ When you clicked deploy, Cloudflare created:
 | **TOTAL** | **~$1,300/month** | **$0/month** | Same infrastructure |
 
 **This is democratization in action.** What used to require a DevOps team and enterprise budget is now accessible to anyone with an idea.
+
+> 💡 **Free Tier Reality Check**: 100,000 requests/day + 10GB storage handles:
+> - Personal portfolio getting 1,000 visitors/day ✅
+> - Small SaaS with 500 active users ✅
+> - Blog with 50,000 monthly pageviews ✅
+> - API serving 3 million requests/month ✅
+>
+> Most personal AND commercial projects never leave the free tier. If you do grow beyond it, you'll have revenue to cover the $5/month.
 
 ---
 
