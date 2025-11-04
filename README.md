@@ -16,7 +16,7 @@
 [![Vectorize](https://img.shields.io/badge/Cloudflare-Vectorize-blue)](https://developers.cloudflare.com/vectorize/)
 [![Network: 330+ Cities](https://img.shields.io/badge/Network-330%2B_Cities-blue)](https://www.cloudflare.com/network/)
 
-[Demo](https://keen.terryrichards.dev) • [Documentation](./docs) • [API Reference](./docs/api/API.md) • [Deploy Guide](./docs/guides/DEPLOYMENT.md)
+[Documentation](./docs) • [API Reference](./docs/api/API.md) • [Deploy Guide](./docs/guides/DEPLOYMENT.md)
 
 ---
 
