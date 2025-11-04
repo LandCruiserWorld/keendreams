@@ -1,5 +1,11 @@
 # 🧠 KeenDreams - Vectorized Cloud Memory
 
+<div align="center">
+
+![KeenDreams - Unofficial Cloudflare Edition](./assets/images/keen-dreams-cover.png)
+
+</div>
+
 > Vector semantic search at the edge powered by Cloudflare Vectorize. Store, search, and restore development context with natural language. 768-dimensional embeddings running across 330+ cities globally. Your code sessions, captured and ready to explore.
 
 [![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/LandCruiserWorld/keendreams)
