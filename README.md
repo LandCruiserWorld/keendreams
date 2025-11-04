@@ -59,7 +59,9 @@ This is a **showcase of what's possible** when you build entirely on Cloudflare'
 
 </details>
 
-**Cost Structure** (In Terms of Dreams):
+<details>
+<summary><strong>Cost Structure (In Terms of Dreams)</strong> (Click to expand)</summary>
+
 - **Free Tier**: 100,000 requests/day (3M/month) + 10GB storage
   - **In Dream Terms**: Store ~500,000 development sessions + search them 3 million times/month
   - **Real-World Usage**:
@@ -74,6 +76,8 @@ This is a **showcase of what's possible** when you build entirely on Cloudflare'
   - **No egress fees** = no surprise bills (AWS charges $0.09/GB for data transfer)
   - **Predictable costs** = sleep well knowing viral traffic won't bankrupt you
 - **Compare**: AWS Lambda + DynamoDB + Pinecone = $50-150/month for equivalent performance
+
+</details>
 
 > **This democratizes enterprise infrastructure.** What Fortune 500 companies spent millions on is now free for students, hobbyists, and small businesses. Even moderate commercial use cases stay on the free tier. That's Cloudflare's mission: help build a better Internet.
 
@@ -249,7 +253,9 @@ Fork this repo and you'll have:
 - TypeScript configured
 - Testing suite included
 
-**Perfect for**:
+<details>
+<summary><strong>Perfect for these use cases</strong> (Click to expand)</summary>
+
 - Knowledge bases
 - Documentation search
 - Note-taking apps
@@ -257,6 +263,8 @@ Fork this repo and you'll have:
 - Code search engines
 - Personal knowledge management
 - Content recommendation engines
+
+</details>
 
 See [Template Guide](./docs/guides/TEMPLATE_GUIDE.md) for adaptation examples.
 
@@ -341,6 +349,9 @@ KeenDreams runs entirely at the edge - here's how:
 
 </div>
 
+<details>
+<summary><strong>See detailed architecture diagram</strong> (Click to expand)</summary>
+
 ```mermaid
 flowchart TB
     subgraph User["👤 Your Experience"]
@@ -381,6 +392,8 @@ flowchart TB
     note1[💡 Each deployment is COMPLETELY isolated<br/>The repo maintainer has ZERO access to your data]
     style note1 fill:#fff9c4,stroke:#f9a825,stroke-width:2px
 ```
+
+</details>
 
 ### Request Flow (How It Actually Works)
 
