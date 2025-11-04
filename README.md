@@ -1,6 +1,6 @@
 # 🧠 KeenDreams - AI-Powered Cloud Memory
 
-> Semantic search powered by Cloudflare's edge network. Store, search, and restore development context with natural language.
+> Semantic search powered by Cloudflare's edge network. Store, search, and restore development context with natural language. Your code sessions, captured and ready to explore.
 
 [![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/LandCruiserWorld/keendreams)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
@@ -112,7 +112,7 @@ flowchart LR
 
 ---
 
-## ✨ Features
+## ✨ Features - Your Development Journey, Remembered
 
 🔍 **Semantic Search** - Natural language queries powered by AI embeddings
 💭 **Dream Storage** - Capture development sessions with full context
@@ -125,7 +125,7 @@ flowchart LR
 
 ---
 
-## 🎯 Deploy in 30 Seconds
+## 🎯 Begin Your Journey in 30 Seconds
 
 Watch how fast you can deploy globally:
 
@@ -249,7 +249,7 @@ See [Template Guide](./docs/guides/TEMPLATE_GUIDE.md) for adaptation examples.
 
 ---
 
-## 💡 Example Usage
+## 💡 Example Usage - Exploring Your Memories
 
 ### Capture a Development Dream
 
@@ -513,7 +513,7 @@ The development server runs at `http://localhost:8787` with hot reload enabled.
 
 ---
 
-## 🎨 Use Cases
+## 🎨 Use Cases - Where Will You Explore?
 
 ### Personal Knowledge Base
 Store and search through your notes, code snippets, and learnings with natural language.
@@ -682,6 +682,8 @@ Building tools that make powerful technology accessible to everyone. If you have
 
 I'm always happy to help developers learning edge computing and semantic search!
 
+> **Curious about the name?** KeenDreams draws subtle inspiration from classic exploration and discovery themes. For the nostalgic among us, [there's a reference here](https://keenwiki.shikadi.net/wiki/Keen_Dreams).
+
 ---
 
 ## 📄 License
@@ -690,7 +692,7 @@ MIT License - see [LICENSE](./LICENSE) for details.
 
 ---
 
-## 🚀 Get Started Now
+## 🚀 Begin Your Adventure
 
 ```bash
 npx create-cloudflare@latest my-keendreams --template https://github.com/LandCruiserWorld/keendreams
@@ -698,7 +700,7 @@ cd my-keendreams
 wrangler deploy
 ```
 
-**That's it!** You now have a production-ready semantic search API running globally on Cloudflare's edge network.
+**That's it!** Your journey begins - a production-ready semantic search API now running globally on Cloudflare's edge network.
 
 ---
 
