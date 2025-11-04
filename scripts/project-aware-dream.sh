@@ -5,8 +5,10 @@
 
 PROJECT_PATH=$(pwd)
 PROJECT_NAME=$(basename "$PROJECT_PATH")
+
+# Configuration
 WORKER_URL="${KEENDREAMS_URL:-https://keendreams.workers.dev}"
-API_KEY="${KEENDREAMS_API_KEY:-ce07bf20b2f511955b11731c62937601097e75e278fe5d63f3da9240d93279fa}"
+API_KEY="${KEENDREAMS_API_KEY:?Error: KEENDREAMS_API_KEY environment variable required. Please set it with: export KEENDREAMS_API_KEY='your-api-key'}"
 
 # Colors
 GREEN='\033[0;32m'

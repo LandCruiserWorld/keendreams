@@ -220,7 +220,7 @@ if (require.main === module) {
   console.log(`curl -X POST -H "Authorization: Bearer YOUR_API_KEY" \\`);
   console.log(`  -H "Content-Type: application/json" \\`);
   console.log(`  -d @${outputPath} \\`);
-  console.log(`  https://keendreams.terry-c67.workers.dev/dream`);
+  console.log(`  https://your-worker.workers.dev/dream`);
 }
 
 module.exports = { convertToDream, parseClaudeConversation };

@@ -13,9 +13,9 @@ KeenDreams is a cloud-based memory persistence system for development projects, 
 - **Caching**: Edge-optimized with auto-warming
 
 ### KV Namespaces
-- `DREAMS` (`0b88fd8ff6914b48a4305d15bc0287ab`): Primary dream storage (177+ dreams)
-- `PROJECTS` (`394b7ec87e7e4838b3f2a085e16730f0`): Project metadata and structure
-- `KEENDREAMS_KV` (`e40a223122d84df490d67e2631c1067b`): Performance caching
+- `DREAMS`: Primary dream storage for development sessions
+- `PROJECTS`: Project metadata and structure tracking
+- `KEENDREAMS_KV`: Performance caching and optimization
 
 ## 🔌 API Endpoints
 
@@ -30,10 +30,10 @@ KeenDreams is a cloud-based memory persistence system for development projects, 
 Supports both authentication methods:
 ```bash
 # X-API-Key (preferred for scripts)
-curl -H "X-API-Key: YOUR_API_KEY" https://keendreams.terry-c67.workers.dev/dreams
+curl -H "X-API-Key: YOUR_API_KEY" https://your-worker.workers.dev/dreams
 
 # Bearer Token (for web apps)
-curl -H "Authorization: Bearer YOUR_API_KEY" https://keendreams.terry-c67.workers.dev/dreams
+curl -H "Authorization: Bearer YOUR_API_KEY" https://your-worker.workers.dev/dreams
 ```
 
 ## 🛠️ Configuration
@@ -44,19 +44,19 @@ name = "keendreams"
 main = "keendreams-worker.js"
 compatibility_date = "2024-01-01"
 
-# Real dreams data
+# KV Namespaces - Replace with your own IDs
 [[kv_namespaces]]
 binding = "DREAMS"
-id = "0b88fd8ff6914b48a4305d15bc0287ab"
+id = "your_dreams_kv_namespace_id"
 
 [[kv_namespaces]]
-binding = "PROJECTS" 
-id = "394b7ec87e7e4838b3f2a085e16730f0"
+binding = "PROJECTS"
+id = "your_projects_kv_namespace_id"
 
 # Performance cache
 [[kv_namespaces]]
 binding = "KEENDREAMS_KV"
-id = "e40a223122d84df490d67e2631c1067b"
+id = "your_cache_kv_namespace_id"
 
 # Cron trigger for cache warming
 [triggers]

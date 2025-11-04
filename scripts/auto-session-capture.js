@@ -115,11 +115,19 @@ async function updateKeenDreamsStats() {
     
     // Try to get current stats from KeenDreams API
     const statsResponse = await new Promise((resolve, reject) => {
+      const apiKey = process.env.KEENDREAMS_API_KEY;
+      const workerUrl = process.env.KEENDREAMS_URL || 'https://keendreams.workers.dev';
+
+      if (!apiKey) {
+        console.error('❌ KEENDREAMS_API_KEY environment variable not set');
+        process.exit(1);
+      }
+
       const curl = spawn('curl', [
         '-X', 'GET',
-        '-H', 'Authorization: Bearer ce07bf20b2f511955b11731c62937601097e75e278fe5d63f3da9240d93279fa',
+        '-H', `Authorization: Bearer ${apiKey}`,
         '-H', 'Content-Type: application/json',
-        'https://keendreams.terry-c67.workers.dev/stats'
+        `${workerUrl}/stats`
       ]);
       
       let response = '';
@@ -150,14 +158,14 @@ async function updateKeenDreamsStats() {
     const updateResponse = await new Promise((resolve) => {
       const curl = spawn('curl', [
         '-X', 'POST',
-        '-H', 'Authorization: Bearer ce07bf20b2f511955b11731c62937601097e75e278fe5d63f3da9240d93279fa',
+        '-H', 'Authorization: Bearer YOUR_API_KEY',
         '-H', 'Content-Type: application/json',
         '-d', JSON.stringify({
           action: 'update_stats',
           source: 'dream_capture',
           timestamp: new Date().toISOString()
         }),
-        'https://keendreams.terry-c67.workers.dev/admin/update-stats'
+        'https://keendreams.workers.dev/admin/update-stats'
       ]);
       
       let response = '';
@@ -187,7 +195,13 @@ async function updateKeenDreamsStats() {
 
 // Auto-upload function
 async function uploadDream(dreamPath, apiKey = null) {
-  const apiToken = apiKey || process.env.KEENDREAMS_API_KEY || 'ce07bf20b2f511955b11731c62937601097e75e278fe5d63f3da9240d93279fa';
+  const apiToken = apiKey || process.env.KEENDREAMS_API_KEY;
+
+  if (!apiToken) {
+    console.error('❌ KEENDREAMS_API_KEY environment variable required');
+    console.error('Set it with: export KEENDREAMS_API_KEY="your-api-key"');
+    return false;
+  }
   
   if (!fs.existsSync(dreamPath)) {
     console.error(`❌ Dream file not found: ${dreamPath}`);
@@ -204,7 +218,7 @@ async function uploadDream(dreamPath, apiKey = null) {
       '-H', `Authorization: Bearer ${apiToken}`,
       '-H', 'Content-Type: application/json',
       '-d', `@${dreamPath}`,
-      'https://keendreams.terry-c67.workers.dev/dream'
+      'https://keendreams.workers.dev/dream'
     ]);
     
     let response = '';
@@ -264,10 +278,10 @@ if (require.main === module) {
     }, 1000);
   } else {
     console.log('\n🚀 To upload manually:');
-    console.log(`curl -X POST -H "Authorization: Bearer ce07bf20b2f511955b11731c62937601097e75e278fe5d63f3da9240d93279fa" \\`);
+    console.log(`curl -X POST -H "Authorization: Bearer YOUR_API_KEY" \\`);
     console.log(`  -H "Content-Type: application/json" \\`);
     console.log(`  -d @"${dreamPath}" \\`);
-    console.log(`  https://keendreams.terry-c67.workers.dev/dream`);
+    console.log(`  https://keendreams.workers.dev/dream`);
   }
 }
 

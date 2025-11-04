@@ -12,6 +12,7 @@ NEXT_DREAM.md
 .dev.vars
 .env
 .env.local
+wrangler.toml
 wrangler.toml.backup
 
 # 📦 Dependencies (can be reinstalled)

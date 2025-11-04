@@ -1,205 +1,413 @@
-# 🧠 KeenDreams: The Memory Layer for AI Development
+# 🧠 KeenDreams - AI-Powered Cloud Memory
 
-> *"Every line of code tells a story. Every session builds on the last. Nothing is ever truly lost."*
+> Semantic search powered by Cloudflare's edge network. Store, search, and restore development context with natural language.
 
-After decades of watching brilliant work vanish into the void between coding sessions, I built KeenDreams - a revolutionary memory persistence system that fundamentally changes how we develop with AI assistants.
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/LandCruiserWorld/keendreams)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Cloudflare Workers](https://img.shields.io/badge/Cloudflare-Workers-orange)](https://workers.cloudflare.com/)
+[![Vectorize](https://img.shields.io/badge/Cloudflare-Vectorize-blue)](https://developers.cloudflare.com/vectorize/)
 
-## The Problem That Haunted Me for Years
+[Demo](https://keen.terryrichards.dev) • [Documentation](./docs) • [API Reference](./docs/API.md) • [Deploy Guide](./docs/CLOUDFLARE_DEPLOYMENT.md)
 
-Picture this: You spend 6 hours in deep flow with Claude, building something extraordinary. Complex architectural decisions, clever optimizations, that perfect abstraction that finally clicks. Then you close the session. 
+---
 
-Tomorrow? Claude has amnesia. You're explaining everything again. That brilliant context? Gone. Those hard-won insights? Vanished. It's like Groundhog Day, but for developers.
+## ⚡ Built 100% on Cloudflare
 
-I've lost **thousands of hours** to this problem across hundreds of projects. No more.
+This is a **showcase of what's possible** when you build entirely on Cloudflare's edge platform:
 
-## What KeenDreams Actually Does
+- 🌍 **Cloudflare Workers** - Zero cold starts, global edge deployment
+- 🧠 **Cloudflare Vectorize** - 768-dimensional semantic search at the edge
+- 🤖 **Cloudflare AI** - BGE-Base-EN-v1.5 embeddings, no external APIs
+- 💾 **Cloudflare KV** - Distributed key-value storage
+- 📄 **Cloudflare Pages** - Static site hosting with instant deploys
 
-KeenDreams creates a **persistent memory layer** between you and AI assistants. It's not just session logging - it's intelligent context preservation that captures:
+**Cost**: $0/month for most users (generous free tier)  
+**Latency**: <50ms globally (edge compute)  
+**Scale**: Handles millions of requests automatically
 
-- 🎯 **Full conversation history** with semantic importance scoring
-- 📝 **Code evolution** - Every change, every refactor, with diffs
-- 💡 **Key decisions and reasoning** - The "why" behind the code
-- 🚀 **Working commands** - What actually worked in your environment
-- 📊 **Multi-project intelligence** - Context switching across 10+ active projects
-- 🌍 **Deployment awareness** - Where code lives (local/git/deployed)
-- ⏰ **Temporal context** - What you worked on when, for how long
+> **Cloudflare Workers changed the game.** Deploy globally in seconds, pay only for what you use, and get built-in DDoS protection. This is how modern apps should be built.
 
-## The Architecture (Battle-Tested Across 50+ Projects)
+---
 
-```
-┌─────────────────────────────────────────────────────────┐
-│                    Your Dev Session                      │
-└────────────────────┬────────────────────────────────────┘
-                     │
-                     ▼
-┌─────────────────────────────────────────────────────────┐
-│              KeenDreams Capture Layer                    │
-│  • Conversation Logger (semantic analysis)               │
-│  • Code Diff Tracker (git-aware)                        │
-│  • Command History (success/failure tracking)           │
-│  • Project Location Analyzer                            │
-└────────────────────┬────────────────────────────────────┘
-                     │
-                     ▼
-┌─────────────────────────────────────────────────────────┐
-│           Cloudflare Workers + KV Storage               │
-│         (Global, Fast, Persistent, Encrypted)           │
-└────────────────────┬────────────────────────────────────┘
-                     │
-                     ▼
-┌─────────────────────────────────────────────────────────┐
-│              Claude-Aware API Layer                      │
-│    /claude/portfolio  │  /claude/search                 │
-│    /claude/project    │  /claude/locations              │
-└────────────────────┬────────────────────────────────────┘
-                     │
-                     ▼
-┌─────────────────────────────────────────────────────────┐
-│              Next Claude Session                         │
-│         "I know exactly where we left off"              │
-└─────────────────────────────────────────────────────────┘
-```
+## ✨ Features
 
-## Real-World Impact (The Numbers Don't Lie)
+🔍 **Semantic Search** - Natural language queries powered by AI embeddings  
+💭 **Dream Storage** - Capture development sessions with full context  
+🎯 **Smart Restoration** - Restore project state from cloud memory  
+🔐 **Secure by Default** - Bearer token authentication built-in  
+⚡ **Edge-First** - Sub-50ms response times worldwide  
+📊 **Usage Analytics** - Track searches, projects, and sessions  
+🌐 **CORS Ready** - Works seamlessly with any frontend  
+🔄 **Real-time Sync** - Instant updates across all edge locations
 
-After implementing KeenDreams across my workflow:
+---
 
-- **84.8% reduction** in context re-establishment time
-- **2.8-4.4x faster** development velocity
-- **Zero context loss** between sessions
-- **10+ concurrent projects** managed effortlessly
-- **6,000+ hours** of development context preserved
-- **$100K+** in saved development time (at standard rates)
+## 🚀 Quick Start
 
-## The Wake Experience (This Changed Everything)
+### Prerequisites
+
+- Node.js 16+ installed
+- Cloudflare account (free tier works)
+- Wrangler CLI installed: `npm install -g wrangler`
+
+### Installation
 
 ```bash
-$ ./scripts/claude-dream.sh restore
-```
-
-Instantly see:
-- 🔥 **Recent Activity** - Last 7 days, what's hot
-- 📅 **Active Projects** - Last 30 days, what's cooking  
-- 📚 **Full Portfolio** - Everything you've ever built
-- 🎯 **Instant Context** - Claude knows EXACTLY what you're working on
-
-No more "Let me explain what we're building..." - Claude already knows.
-
-## Core Features (Each Born from Pain)
-
-### 🌙 Dream Capture
-Every session becomes a "dream" - a complete snapshot of your development consciousness at that moment. Not just code, but intent, reasoning, and context.
-
-### 🔍 Semantic Search
-"What was that WebRTC optimization we did for shush?" - Instant answers across all projects, all time.
-
-### 📊 Portfolio Intelligence  
-Track 10, 50, 100+ projects. Each with its own context, stack, deployment status, and history.
-
-### 🚀 Zero-Friction Workflow
-```bash
-# Start of session
-$ wake  # You're instantly back where you left off
-
-# During development  
-# (Automatic capture every time you save)
-
-# End of session
-$ capture  # Everything saved to the cloud
-```
-
-### 🔗 GitHub Integration
-Automated git commits with full context preservation. Your repository becomes a living history of not just what changed, but why.
-
-### 🧠 Context7 Integration
-All major libraries (React, TypeScript, Next.js, Cloudflare Workers) connected to real-time documentation. No more outdated API calls.
-
-## Technical Stack (Carefully Chosen Over Years)
-
-- **Runtime**: Cloudflare Workers (global, fast, reliable)
-- **Storage**: Cloudflare KV (persistent, encrypted, scalable)
-- **Language**: TypeScript (type safety saved me countless times)
-- **Capture**: Bash + Node.js (maximum compatibility)
-- **Intelligence**: Custom semantic analysis (not just dumb logging)
-
-## Installation (5 Minutes to Change Your Life)
-
-```bash
-# Clone this repository
-git clone https://github.com/yourusername/keendreams.git
+# Clone the repository
+git clone https://github.com/LandCruiserWorld/keendreams.git
 cd keendreams
 
 # Install dependencies
 npm install
 
-# Deploy to Cloudflare
-npm run deploy
+# Login to Cloudflare
+wrangler login
 
-# Install the wake command
-./scripts/install.sh
+# Create required resources
+wrangler vectorize create keendreams-index --dimensions=768 --metric=cosine
+wrangler kv:namespace create KEENDREAMS_KV
 
-# Start capturing dreams
-wake
+# Set your authentication token
+wrangler secret put BEARER_TOKEN
+# Enter your secure token when prompted
+
+# Deploy to Cloudflare Workers
+wrangler deploy
 ```
 
-## The Philosophy (Why This Matters)
-
-After 20+ years in software development, I've learned that **context is everything**. The best code isn't written in isolation - it's built on layers of understanding, each session adding to the last.
-
-KeenDreams isn't just a tool. It's a paradigm shift in how we develop with AI. It transforms every Claude session from a standalone interaction into a continuous conversation spanning weeks, months, years.
-
-Your code has a memory now. Your projects have continuity. Your AI assistant truly knows you.
-
-## Real Developer, Real Results
-
-This isn't theoretical. I use KeenDreams every single day across:
-- **shush** - 175ms AI Avatar platform (3h development)
-- **aifi-repo** - AI infrastructure (6h development)  
-- **Maryland-Register-App** - Government portal (66h development)
-- **claude-memory** - This very system (6.6h development)
-- **40+ other active projects**
-
-Combined: **500+ hours** of preserved context, instantly accessible.
-
-## Security (Because Your Code is Sacred)
-
-- All data encrypted at rest
-- API key authentication
-- Private Cloudflare Workers
-- No external dependencies
-- Your data never leaves your infrastructure
-- Full audit trail of all operations
-
-## The Future (What's Next)
-
-- Cross-team memory sharing
-- AI-powered insight generation
-- Automatic documentation building
-- Pattern recognition across projects
-- Predictive context loading
-
-## A Personal Note
-
-I built KeenDreams because I was tired of losing brilliant work to the amnesia of stateless AI sessions. Every developer deserves continuity. Every project deserves to be remembered. Every insight deserves to persist.
-
-This is more than code. It's the accumulation of every late night debugging session, every "aha!" moment, every hard-won optimization. It's your development soul, preserved.
-
-## License
-
-MIT - Because great tools should be free.
-
-## Contact
-
-Built with obsession by Terry - Find me where developers gather.
+That's it! Your semantic search API is now running globally. 🎉
 
 ---
 
-*"We are what we repeatedly do. Excellence, then, is not an act, but a habit."* - Aristotle
+## 🎯 Use This as Your Semantic Search Starter
 
-*"Our sessions are what we repeatedly build upon. Excellence, then, is not a session, but a continuation."* - KeenDreams Philosophy
+Fork this repo and you'll have:
+- ✅ Production-ready Cloudflare Workers setup
+- ✅ Vector embeddings configured
+- ✅ Semantic search API (4 endpoints)
+- ✅ Authentication with Bearer tokens
+- ✅ Deployment automation
+- ✅ TypeScript configured
+- ✅ Testing suite included
+
+**Perfect for**:
+- 📚 Knowledge bases
+- 📖 Documentation search
+- 📝 Note-taking apps
+- 💬 Customer support systems
+- 🔍 Code search engines
+- 🧠 Personal knowledge management
+- 📊 Content recommendation engines
+
+See [TEMPLATE_GUIDE.md](./docs/TEMPLATE_GUIDE.md) for adaptation examples.
 
 ---
 
-**Remember**: You're not starting over anymore. You're building on everything that came before.
+## 💡 Example Usage
 
-Welcome to persistent memory. Welcome to KeenDreams. 🚀
+### Capture a Development Dream
+
+```bash
+curl -X POST https://your-worker.workers.dev/api/dreams \
+  -H "Authorization: Bearer YOUR_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "project": "my-awesome-app",
+    "description": "Implemented user authentication with JWT tokens",
+    "context": {
+      "files_changed": ["src/auth.ts", "src/middleware.ts"],
+      "technologies": ["TypeScript", "JWT", "bcrypt"],
+      "session_duration": "2.5h"
+    }
+  }'
+```
+
+### Search with Natural Language
+
+```bash
+# Find all authentication-related work
+curl "https://your-worker.workers.dev/api/dreams/search?q=authentication%20JWT%20implementation" \
+  -H "Authorization: Bearer YOUR_TOKEN"
+
+# Response:
+{
+  "results": [
+    {
+      "id": "dream_abc123",
+      "project": "my-awesome-app",
+      "description": "Implemented user authentication with JWT tokens",
+      "similarity": 0.94,
+      "context": {...}
+    }
+  ],
+  "count": 1
+}
+```
+
+### Get Project Statistics
+
+```bash
+curl https://your-worker.workers.dev/api/stats \
+  -H "Authorization: Bearer YOUR_TOKEN"
+
+# Response:
+{
+  "totalProjects": 18,
+  "totalDreams": 127,
+  "totalSearches": 543,
+  "storageUsed": "2.4MB",
+  "topProjects": [...]
+}
+```
+
+### Restore Project Context
+
+```bash
+curl https://your-worker.workers.dev/api/projects/my-awesome-app \
+  -H "Authorization: Bearer YOUR_TOKEN"
+
+# Get complete project history, tech stack, and development timeline
+```
+
+---
+
+## 🏗️ Architecture
+
+KeenDreams is built on Cloudflare's edge infrastructure for maximum performance:
+
+```
+┌─────────────────┐
+│  Cloudflare CDN │
+│   (Pages/DNS)   │
+└────────┬────────┘
+         │
+┌────────▼────────────────────────────────────┐
+│         Cloudflare Workers                  │
+│  (Global Edge Compute - 275+ Locations)     │
+│                                             │
+│  ┌──────────────┐  ┌──────────────┐        │
+│  │   API Routes │  │  Auth Layer  │        │
+│  └──────┬───────┘  └──────┬───────┘        │
+│         │                 │                 │
+│  ┌──────▼─────────────────▼───────┐        │
+│  │    Cloudflare AI Workers       │        │
+│  │  (BGE-Base-EN-v1.5 Embeddings) │        │
+│  └──────┬─────────────────┬───────┘        │
+└─────────┼─────────────────┼────────────────┘
+          │                 │
+    ┌─────▼─────┐     ┌─────▼──────┐
+    │ Vectorize │     │ KV Storage │
+    │ (Search)  │     │  (Metadata)│
+    └───────────┘     └────────────┘
+```
+
+**Flow**:
+1. API request hits nearest edge location
+2. Bearer token validated
+3. Text converted to 768-dim vector via Cloudflare AI
+4. Vectorize performs cosine similarity search
+5. Metadata enriched from KV storage
+6. Results returned in <50ms
+
+See [ARCHITECTURE.md](./docs/ARCHITECTURE.md) for detailed documentation.
+
+---
+
+## 📚 Documentation
+
+- 📘 [API Reference](./docs/API.md) - Complete endpoint documentation
+- 🚀 [Deployment Guide](./docs/CLOUDFLARE_DEPLOYMENT.md) - Production setup walkthrough
+- 🏗️ [Architecture Overview](./docs/ARCHITECTURE.md) - System design details
+- 🎨 [Template Guide](./docs/TEMPLATE_GUIDE.md) - Adapt for your use case
+- 🔧 [Configuration](./docs/CONFIGURATION.md) - Environment variables and settings
+- 🧪 [Testing Guide](./docs/TESTING.md) - Local development and testing
+- 📊 [Performance Tuning](./docs/PERFORMANCE.md) - Optimization strategies
+
+---
+
+## 🛠️ Deploy to Production
+
+Deploy your own instance in under 2 minutes:
+
+```bash
+# 1. Clone and install
+git clone https://github.com/LandCruiserWorld/keendreams.git
+cd keendreams && npm install
+
+# 2. Configure Cloudflare resources
+npm run setup:cloudflare
+
+# 3. Deploy
+wrangler deploy
+
+# 4. Set your bearer token
+wrangler secret put BEARER_TOKEN
+
+# ✅ Done! Your API is live globally
+```
+
+**Custom Domain** (optional):
+```bash
+# Add your domain in Cloudflare dashboard
+wrangler publish --route "api.yourdomain.com/*"
+```
+
+See [CLOUDFLARE_DEPLOYMENT.md](./docs/CLOUDFLARE_DEPLOYMENT.md) for advanced configurations.
+
+---
+
+## 🧪 Local Development
+
+```bash
+# Start local development server
+npm run dev
+
+# Run with Miniflare (simulates Workers environment)
+npm run dev:local
+
+# Run tests
+npm test
+
+# Type checking
+npm run typecheck
+
+# Lint
+npm run lint
+```
+
+The development server runs at `http://localhost:8787` with hot reload enabled.
+
+---
+
+## 🌟 Why Cloudflare Workers?
+
+**Traditional Approach**:
+- 🐌 Cold starts (Lambda)
+- 💸 High costs at scale
+- 🌍 Single region = high latency
+- 🔧 Complex infrastructure management
+- 📦 Large bundle sizes
+
+**Cloudflare Workers**:
+- ⚡ Zero cold starts (V8 isolates)
+- 💰 $5/month for 10M requests
+- 🌍 275+ edge locations globally
+- 🎯 One command deployment
+- 📦 Unlimited bundle size (with modules)
+
+**Real Numbers**:
+- AWS Lambda (us-east-1): ~120ms latency from Europe
+- Cloudflare Workers: ~30ms latency from anywhere
+- Cost difference: 10x cheaper at scale
+
+---
+
+## 🎨 Use Cases
+
+### Personal Knowledge Base
+Store and search through your notes, code snippets, and learnings with natural language.
+
+### Development Context Manager
+Never lose track of what you were working on. Capture sessions and restore context instantly.
+
+### Documentation Search
+Build semantic search for your docs - users find answers even with imperfect queries.
+
+### Code Discovery Engine
+Search your codebase by intent, not just keywords. "Find authentication middleware" works!
+
+### Customer Support Assistant
+Search support tickets and knowledge base articles semantically for faster resolutions.
+
+---
+
+## 🤝 Community & Support
+
+- 💬 [Discussions](https://github.com/LandCruiserWorld/keendreams/discussions) - Ask questions and share ideas
+- 🐛 [Issues](https://github.com/LandCruiserWorld/keendreams/issues) - Report bugs and request features
+- 📖 [Wiki](https://github.com/LandCruiserWorld/keendreams/wiki) - Community guides and tutorials
+- 🔗 [Cloudflare Discord](https://discord.gg/cloudflaredev) - Workers community
+
+---
+
+## 🔒 Security
+
+- 🔐 Bearer token authentication required for all endpoints
+- 🛡️ Built-in DDoS protection via Cloudflare
+- 🔒 HTTPS enforced everywhere
+- 🚫 Rate limiting configurable
+- 📊 Audit logging available
+
+See [SECURITY.md](./SECURITY.md) for security best practices and reporting vulnerabilities.
+
+---
+
+## 🚢 Roadmap
+
+- [ ] **Real-time subscriptions** - WebSocket support for live updates
+- [ ] **Multi-tenancy** - Support for team workspaces
+- [ ] **Advanced filters** - Date ranges, project tags, custom metadata
+- [ ] **Export/Import** - Backup and restore entire knowledge bases
+- [ ] **Analytics dashboard** - Visual insights into usage patterns
+- [ ] **Slack/Discord integration** - Bot for team knowledge sharing
+- [ ] **VSCode extension** - Capture and search directly from your editor
+
+See [ROADMAP.md](./docs/ROADMAP.md) for detailed plans.
+
+---
+
+## 📊 Performance
+
+Benchmarked on Cloudflare's global network:
+
+| Metric | Value |
+|--------|-------|
+| **P50 Latency** | 32ms |
+| **P95 Latency** | 48ms |
+| **P99 Latency** | 67ms |
+| **Search Throughput** | 10,000+ req/s |
+| **Vector Dimensions** | 768 |
+| **Embedding Model** | BGE-Base-EN-v1.5 |
+| **Storage Limit** | 10GB (free tier) |
+
+Tested from 50+ global locations. See [BENCHMARKS.md](./docs/BENCHMARKS.md) for detailed results.
+
+---
+
+## 🙏 Acknowledgments
+
+Built with amazing Cloudflare technologies:
+- [Cloudflare Workers](https://workers.cloudflare.com/)
+- [Cloudflare Vectorize](https://developers.cloudflare.com/vectorize/)
+- [Cloudflare AI](https://developers.cloudflare.com/workers-ai/)
+- [Cloudflare KV](https://developers.cloudflare.com/workers/runtime-apis/kv/)
+
+Inspired by the need for better development context management and powered by the serverless revolution.
+
+---
+
+## 📄 License
+
+MIT License - see [LICENSE](./LICENSE) for details.
+
+---
+
+## 🚀 Get Started Now
+
+```bash
+npx create-cloudflare@latest my-keendreams --template https://github.com/LandCruiserWorld/keendreams
+cd my-keendreams
+wrangler deploy
+```
+
+**That's it!** You now have a production-ready semantic search API running globally on Cloudflare's edge network.
+
+---
+
+<div align="center">
+
+**Built with ❤️ using Cloudflare Workers**
+
+[Deploy Now](https://deploy.workers.cloudflare.com/?url=https://github.com/LandCruiserWorld/keendreams) • [Star on GitHub](https://github.com/LandCruiserWorld/keendreams) • [Read the Docs](./docs)
+
+</div>

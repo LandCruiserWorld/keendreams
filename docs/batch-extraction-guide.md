@@ -187,12 +187,16 @@ node scripts/batch-claude-processor.js conversations/
 **Step 3: Bulk Upload to KeenDreams**
 ```bash
 # Upload all converted dreams
+# Set your API key and worker URL first:
+# export KEENDREAMS_API_KEY="your-api-key"
+# export KEENDREAMS_URL="https://your-worker.workers.dev"
+
 for file in claude-dream-*.json; do
   echo "Uploading $file..."
-  curl -X POST -H "Authorization: Bearer ce07bf20b2f511955b11731c62937601097e75e278fe5d63f3da9240d93279fa" \
+  curl -X POST -H "Authorization: Bearer $KEENDREAMS_API_KEY" \
     -H "Content-Type: application/json" \
     -d @"$file" \
-    https://keendreams.terry-c67.workers.dev/dream
+    $KEENDREAMS_URL/dream
   sleep 1  # Rate limiting
 done
 ```

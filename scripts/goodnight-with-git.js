@@ -49,9 +49,9 @@ async function updateKeenDreamsStats() {
     const statsResponse = await new Promise((resolve, reject) => {
       const curl = spawn('curl', [
         '-X', 'GET',
-        '-H', 'Authorization: Bearer ce07bf20b2f511955b11731c62937601097e75e278fe5d63f3da9240d93279fa',
+        '-H', 'Authorization: Bearer ${KEENDREAMS_API_KEY}',
         '-H', 'Content-Type: application/json',
-        'https://keendreams.terry-c67.workers.dev/stats'
+        'https://keendreams.workers.dev/stats'
       ]);
       
       let response = '';
@@ -82,14 +82,14 @@ async function updateKeenDreamsStats() {
     const updateResponse = await new Promise((resolve) => {
       const curl = spawn('curl', [
         '-X', 'POST',
-        '-H', 'Authorization: Bearer ce07bf20b2f511955b11731c62937601097e75e278fe5d63f3da9240d93279fa',
+        '-H', 'Authorization: Bearer ${KEENDREAMS_API_KEY}',
         '-H', 'Content-Type: application/json',
         '-d', JSON.stringify({
           action: 'update_stats',
           source: 'goodnight_hook',
           timestamp: new Date().toISOString()
         }),
-        'https://keendreams.terry-c67.workers.dev/admin/update-stats'
+        'https://keendreams.workers.dev/admin/update-stats'
       ]);
       
       let response = '';

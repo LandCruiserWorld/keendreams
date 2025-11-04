@@ -128,10 +128,10 @@ if (require.main === module) {
     console.log(`🏷️  Title: ${dream.projectName}`);
     
     console.log('\n🚀 To upload to KeenDreams:');
-    console.log(`curl -X POST -H "Authorization: Bearer ce07bf20b2f511955b11731c62937601097e75e278fe5d63f3da9240d93279fa" \\`);
+    console.log(`curl -X POST -H "Authorization: Bearer ${KEENDREAMS_API_KEY}" \\`);
     console.log(`  -H "Content-Type: application/json" \\`);
     console.log(`  -d @${filename} \\`);
-    console.log(`  https://keendreams.terry-c67.workers.dev/dream`);
+    console.log(`  https://keendreams.workers.dev/dream`);
     
   } catch (error) {
     console.error('❌ Conversion failed:', error.message);

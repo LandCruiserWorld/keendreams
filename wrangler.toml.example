@@ -1,0 +1,92 @@
+# KeenDreams Cloudflare Workers Configuration Template
+# Copy this to wrangler.toml and replace with your actual values
+
+name = "keendreams"
+main = "keendreams-worker.js"
+compatibility_date = "2024-01-01"
+
+# ============================================
+# Custom Domain (Optional)
+# ============================================
+# Uncomment and update if using a custom domain
+# routes = [
+#   "api.yourdomain.com/*"
+# ]
+
+# ============================================
+# KV Namespaces
+# ============================================
+# Create these namespaces first:
+#   wrangler kv:namespace create "DREAMS"
+#   wrangler kv:namespace create "PROJECTS"
+#   wrangler kv:namespace create "KEENDREAMS_KV"
+# Then replace the IDs below with the output
+
+[[kv_namespaces]]
+binding = "DREAMS"
+id = "your_dreams_kv_namespace_id"  # Get from: wrangler kv:namespace create "DREAMS"
+
+[[kv_namespaces]]
+binding = "PROJECTS"
+id = "your_projects_kv_namespace_id"  # Get from: wrangler kv:namespace create "PROJECTS"
+
+[[kv_namespaces]]
+binding = "KEENDREAMS_KV"
+id = "your_cache_kv_namespace_id"  # Get from: wrangler kv:namespace create "KEENDREAMS_KV"
+
+# ============================================
+# Vectorize Index (Semantic Search)
+# ============================================
+# Create the vectorize index first:
+#   wrangler vectorize create keendreams-embeddings --dimensions=768 --metric=cosine
+# Then uncomment and add the binding
+
+# [[vectorize]]
+# binding = "VECTORIZE"
+# index_name = "keendreams-embeddings"
+
+# ============================================
+# AI Binding (for embeddings)
+# ============================================
+# Cloudflare AI Workers binding for BGE embeddings
+# [ai]
+# binding = "AI"
+
+# ============================================
+# Environment Variables (Non-Secret)
+# ============================================
+# Note: API keys should be set as secrets, not vars
+# Use: wrangler secret put KEENDREAMS_API_KEY
+
+# ============================================
+# Cron Triggers (Optional)
+# ============================================
+# Uncomment to enable periodic cache warming
+# [triggers]
+# crons = ["*/5 * * * *"]  # Every 5 minutes
+
+# ============================================
+# Performance Settings
+# ============================================
+[build]
+command = ""
+watch_paths = ["keendreams-worker.js"]
+
+# ============================================
+# Setup Instructions
+# ============================================
+# 1. Copy this file: cp wrangler.toml.example wrangler.toml
+# 2. Create KV namespaces (see commands above)
+# 3. Replace namespace IDs with actual values
+# 4. Create Vectorize index (if using semantic search)
+# 5. Set API key secret: wrangler secret put KEENDREAMS_API_KEY
+# 6. Deploy: wrangler deploy
+# 7. Test: curl https://your-worker.workers.dev/health
+
+# ============================================
+# Security Notes
+# ============================================
+# - wrangler.toml is in .gitignore (contains your namespace IDs)
+# - Keep this .example file generic (no real IDs)
+# - Never commit secrets to git
+# - Use wrangler secret put for sensitive values

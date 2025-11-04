@@ -2,24 +2,25 @@ name = "keendreams"
 main = "keendreams-worker.js"
 compatibility_date = "2024-01-01"
 
-# Custom domain routing
-routes = [
-  "terryrichards.dev/*"
-]
+# Custom domain routing (optional)
+# routes = [
+#   "your-domain.com/*"
+# ]
 
-# KV Namespaces - REAL DREAMS DATA
+# KV Namespaces
+# Get these IDs by running: wrangler kv:namespace create "DREAMS"
 [[kv_namespaces]]
 binding = "DREAMS"
-id = "0b88fd8ff6914b48a4305d15bc0287ab"
+id = "your_dreams_kv_namespace_id"  # Replace with your DREAMS KV namespace ID
 
 [[kv_namespaces]]
-binding = "PROJECTS" 
-id = "394b7ec87e7e4838b3f2a085e16730f0"
+binding = "PROJECTS"
+id = "your_projects_kv_namespace_id"  # Replace with your PROJECTS KV namespace ID
 
 # Cache namespace
 [[kv_namespaces]]
 binding = "KEENDREAMS_KV"
-id = "e40a223122d84df490d67e2631c1067b"
+id = "your_cache_kv_namespace_id"  # Replace with your cache KV namespace ID
 
 # Environment variables (secret will be set via wrangler secret)
 # Note: API key should be set as secret, not var for security

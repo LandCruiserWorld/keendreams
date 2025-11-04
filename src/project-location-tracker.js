@@ -360,7 +360,7 @@ class ProjectLocationTracker {
 // CLI interface
 if (require.main === module) {
     const tracker = new ProjectLocationTracker(
-        process.env.KEENDREAMS_URL || 'https://keendreams.terry-c67.workers.dev',
+        process.env.KEENDREAMS_URL || 'https://keendreams.workers.dev',
         process.env.KEENDREAMS_API_KEY
     );
 

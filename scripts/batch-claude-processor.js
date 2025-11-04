@@ -100,10 +100,10 @@ function processDirectory(dirPath) {
     // Generate upload script
     const uploadScript = results.map(r => 
       `echo "Uploading ${r.dream}..."\n` +
-      `curl -X POST -H "Authorization: Bearer ce07bf20b2f511955b11731c62937601097e75e278fe5d63f3da9240d93279fa" \\\\\n` +
+      `curl -X POST -H "Authorization: Bearer ${KEENDREAMS_API_KEY}" \\\\\n` +
       `  -H "Content-Type: application/json" \\\\\n` +
       `  -d @"${r.dream}" \\\\\n` +
-      `  https://keendreams.terry-c67.workers.dev/dream\n` +
+      `  https://keendreams.workers.dev/dream\n` +
       `sleep 1\n`
     ).join('\n');
     
@@ -135,10 +135,10 @@ function processSingleFile(filepath) {
     console.log(`💾 Saved as: ${dreamPath}`);
     
     console.log(`\n🚀 To upload:`);
-    console.log(`curl -X POST -H "Authorization: Bearer ce07bf20b2f511955b11731c62937601097e75e278fe5d63f3da9240d93279fa" \\\\`);
+    console.log(`curl -X POST -H "Authorization: Bearer ${KEENDREAMS_API_KEY}" \\\\`);
     console.log(`  -H "Content-Type: application/json" \\\\`);
     console.log(`  -d @"${dreamPath}" \\\\`);
-    console.log(`  https://keendreams.terry-c67.workers.dev/dream`);
+    console.log(`  https://keendreams.workers.dev/dream`);
     
   } catch (error) {
     console.error('❌ Error:', error.message);

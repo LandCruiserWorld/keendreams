@@ -357,7 +357,7 @@ class ClaudePortfolioAPI {
 // CLI interface for testing
 if (require.main === module) {
     const api = new ClaudePortfolioAPI(
-        process.env.KEENDREAMS_URL || 'https://keendreams.terry-c67.workers.dev',
+        process.env.KEENDREAMS_URL || 'https://keendreams.workers.dev',
         process.env.KEENDREAMS_API_KEY
     );
     

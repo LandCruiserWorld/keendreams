@@ -114,12 +114,16 @@
     };
     
     updateStatus('Uploading dream to KeenDreams...');
-    
+
     // Upload to KeenDreams
-    fetch('https://keendreams.terry-c67.workers.dev/dream', {
+    // IMPORTANT: Replace these values with your own:
+    const WORKER_URL = 'https://your-worker.workers.dev';  // Your worker URL
+    const API_KEY = 'YOUR_API_KEY';  // Your API key
+
+    fetch(`${WORKER_URL}/dream`, {
       method: 'POST',
       headers: {
-        'Authorization': 'Bearer ce07bf20b2f511955b11731c62937601097e75e278fe5d63f3da9240d93279fa',
+        'Authorization': `Bearer ${API_KEY}`,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(dream)
