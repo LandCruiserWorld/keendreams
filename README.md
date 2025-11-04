@@ -8,8 +8,13 @@
 [![Security: Complete User Isolation](https://img.shields.io/badge/Security-Complete_User_Isolation-green.svg)](./SECURITY.md)
 [![Cloudflare Workers](https://img.shields.io/badge/Cloudflare-Workers-orange)](https://workers.cloudflare.com/)
 [![Vectorize](https://img.shields.io/badge/Cloudflare-Vectorize-blue)](https://developers.cloudflare.com/vectorize/)
+[![Network: 330+ Cities](https://img.shields.io/badge/Network-330%2B_Cities-blue)](https://www.cloudflare.com/network/)
 
 [Demo](https://keen.terryrichards.dev) • [Documentation](./docs) • [API Reference](./docs/api/API.md) • [Deploy Guide](./docs/guides/DEPLOYMENT.md)
+
+---
+
+> 🌍 **New to Cloudflare?** Think of it as a global network of mini-computers (330+ cities) that run your code closer to users. What used to require expensive servers and DevOps teams is now free and instant. [Learn more →](https://www.cloudflare.com/learning/what-is-cloudflare/)
 
 ---
 
@@ -17,29 +22,73 @@
 
 This is a **showcase of what's possible** when you build entirely on Cloudflare's edge platform:
 
-- 🌍 **Cloudflare Workers** - Zero cold starts, global edge deployment
+- 🌍 **Cloudflare Workers** - Zero cold starts, global edge deployment across 330+ cities
 - 🧠 **Cloudflare Vectorize** - 768-dimensional semantic search at the edge
-- 🤖 **Cloudflare AI** - BGE-Base-EN-v1.5 embeddings, no external APIs
-- 💾 **Cloudflare KV** - Distributed key-value storage
+- 🤖 **Cloudflare AI** - BGE-Base-EN-v1.5 embeddings, no external APIs needed
+- 💾 **Cloudflare KV** - Distributed key-value storage with global replication
 - 📄 **Cloudflare Pages** - Static site hosting with instant deploys
 
-**Cost**: $0/month for most users (generous free tier)  
-**Latency**: <50ms globally (edge compute)  
-**Scale**: Handles millions of requests automatically
+**Network Scale**: Serving 20% of all web traffic globally (6+ trillion requests/day)
+**Cost**: $0/month for most users (generous free tier)
+**Latency**: <50ms globally for 95% of internet users (edge compute)
+**Scale**: Handles millions of requests automatically with zero cold starts
 
 > **Cloudflare Workers changed the game.** Deploy globally in seconds, pay only for what you use, and get built-in DDoS protection. This is how modern apps should be built.
 
 ---
 
+## ⚡ Why Edge Computing Matters
+
+<details>
+<summary><strong>Traditional Cloud vs Cloudflare Workers</strong> (Click to expand)</summary>
+
+```mermaid
+flowchart LR
+    subgraph Traditional["🐌 Traditional Cloud (AWS Lambda)"]
+        direction TB
+        T1[User in Europe 🇪🇺]
+        T2[Request travels 5,000 miles ✈️]
+        T3[AWS us-east-1 🏢<br/>Virginia, USA]
+        T4[Cold start delay ❄️<br/>100-1000ms]
+        T5[Response travels back ✈️]
+        T6[Total: 1,200ms+ ⏱️]
+
+        T1 --> T2 --> T3 --> T4 --> T5 --> T6
+    end
+
+    subgraph Cloudflare["⚡ Cloudflare Workers"]
+        direction TB
+        C1[User in Europe 🇪🇺]
+        C2[Nearest edge 📍<br/>Amsterdam - 8ms]
+        C3[0ms cold start ⚡<br/>V8 isolates]
+        C4[Edge-local data 💾]
+        C5[Response: 32ms ⏱️]
+
+        C1 --> C2 --> C3 --> C4 --> C5
+    end
+
+    style Traditional fill:#ffebee,stroke:#c62828,stroke-width:2px
+    style Cloudflare fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+```
+
+**The numbers speak for themselves:**
+- AWS Lambda: ~120ms from Europe to us-east-1 + cold start delays
+- Cloudflare Workers: ~30ms from anywhere + zero cold starts
+- Cost: 10x cheaper at scale ($0.50/1M vs $20/1M requests)
+
+</details>
+
+---
+
 ## ✨ Features
 
-🔍 **Semantic Search** - Natural language queries powered by AI embeddings  
-💭 **Dream Storage** - Capture development sessions with full context  
-🎯 **Smart Restoration** - Restore project state from cloud memory  
-🔐 **Secure by Default** - Bearer token authentication built-in  
-⚡ **Edge-First** - Sub-50ms response times worldwide  
-📊 **Usage Analytics** - Track searches, projects, and sessions  
-🌐 **CORS Ready** - Works seamlessly with any frontend  
+🔍 **Semantic Search** - Natural language queries powered by AI embeddings
+💭 **Dream Storage** - Capture development sessions with full context
+🎯 **Smart Restoration** - Restore project state from cloud memory
+🔐 **Secure by Default** - Bearer token authentication built-in
+⚡ **Edge-First** - Sub-50ms response times worldwide
+📊 **Usage Analytics** - Track searches, projects, and sessions
+🌐 **CORS Ready** - Works seamlessly with any frontend
 🔄 **Real-time Sync** - Instant updates across all edge locations
 
 ---
@@ -185,7 +234,7 @@ KeenDreams is built on Cloudflare's edge infrastructure for maximum performance:
          │
 ┌────────▼────────────────────────────────────┐
 │         Cloudflare Workers                  │
-│  (Global Edge Compute - 275+ Locations)     │
+│  (Global Edge Compute - 330+ Locations)     │
 │                                             │
 │  ┌──────────────┐  ┌──────────────┐        │
 │  │   API Routes │  │  Auth Layer  │        │
@@ -204,7 +253,7 @@ KeenDreams is built on Cloudflare's edge infrastructure for maximum performance:
 ```
 
 **Flow**:
-1. API request hits nearest edge location
+1. API request hits nearest edge location (330+ choices)
 2. Bearer token validated
 3. Text converted to 768-dim vector via Cloudflare AI
 4. Vectorize performs cosine similarity search
@@ -294,23 +343,29 @@ The development server runs at `http://localhost:8787` with hot reload enabled.
 ## 🌟 Why Cloudflare Workers?
 
 **Traditional Approach**:
-- 🐌 Cold starts (Lambda)
-- 💸 High costs at scale
+- 🐌 Cold starts (Lambda: 100-1000ms)
+- 💸 High costs at scale ($20/1M requests)
 - 🌍 Single region = high latency
 - 🔧 Complex infrastructure management
-- 📦 Large bundle sizes
+- 📦 Limited bundle sizes
 
 **Cloudflare Workers**:
-- ⚡ Zero cold starts (V8 isolates)
-- 💰 $5/month for 10M requests
-- 🌍 275+ edge locations globally
+- ⚡ Zero cold starts (tested on 6 trillion requests/day)
+- 💰 $0.50/1M requests (10x cheaper)
+- 🌍 330+ edge locations globally
 - 🎯 One command deployment
 - 📦 Unlimited bundle size (with modules)
 
 **Real Numbers**:
 - AWS Lambda (us-east-1): ~120ms latency from Europe
 - Cloudflare Workers: ~30ms latency from anywhere
-- Cost difference: 10x cheaper at scale
+- Cost comparison: **AWS Lambda: $20/1M requests | Cloudflare: $0.50/1M requests**
+
+**Network Statistics**:
+- 🌐 **330+ cities** in Cloudflare's global network
+- 📊 **95% of Internet users** within 50ms of a Cloudflare data center
+- 🚀 **6 trillion requests per day** handled globally
+- ⚡ **441% faster** than AWS Lambda at P95 latency
 
 ---
 
@@ -405,12 +460,26 @@ Tested from 50+ global locations. See [BENCHMARKS.md](./docs/BENCHMARKS.md) for 
 ## 🙏 Acknowledgments
 
 Built with amazing Cloudflare technologies:
-- [Cloudflare Workers](https://workers.cloudflare.com/)
-- [Cloudflare Vectorize](https://developers.cloudflare.com/vectorize/)
-- [Cloudflare AI](https://developers.cloudflare.com/workers-ai/)
-- [Cloudflare KV](https://developers.cloudflare.com/workers/runtime-apis/kv/)
+- [Cloudflare Workers](https://workers.cloudflare.com/) - Edge compute across 330+ cities
+- [Cloudflare Vectorize](https://developers.cloudflare.com/vectorize/) - Vector database at the edge
+- [Cloudflare AI](https://developers.cloudflare.com/workers-ai/) - AI models without external APIs
+- [Cloudflare KV](https://developers.cloudflare.com/workers/runtime-apis/kv/) - Global key-value storage
 
-Inspired by the need for better development context management and powered by the serverless revolution.
+**Special thanks** to [Craig Dennis](https://github.com/craigsdennis) from Cloudflare for sharing his expertise on Workers AI patterns and best practices. His guidance helped shape the AI integration architecture in this project.
+
+Inspired by the need for better development context management and powered by Cloudflare's mission to democratize internet infrastructure.
+
+---
+
+## 👤 About & Contact
+
+**Maintainer**: Terry Richards
+
+Building tools that make powerful technology accessible to everyone. If you have questions about KeenDreams, want to discuss Cloudflare Workers architecture, or explore collaboration opportunities, feel free to connect:
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?logo=linkedin)](https://www.linkedin.com/in/tmrichards/)
+
+I'm always happy to help developers learning edge computing and semantic search!
 
 ---
 
