@@ -4,11 +4,10 @@
 
 [![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/LandCruiserWorld/keendreams)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![OpenSSF Best Practices: Pending](https://img.shields.io/badge/OpenSSF_Best_Practices-Pending-yellow.svg)](https://bestpractices.coreinfrastructure.org/)
 [![Security: Complete User Isolation](https://img.shields.io/badge/Security-Complete_User_Isolation-green.svg)](./SECURITY.md)
 [![Cloudflare Workers](https://img.shields.io/badge/Cloudflare-Workers-orange)](https://workers.cloudflare.com/)
 [![Vectorize](https://img.shields.io/badge/Cloudflare-Vectorize-blue)](https://developers.cloudflare.com/vectorize/)
-
-> 💡 **Want to add trust badge?** Apply for the [OpenSSF Best Practices Badge](https://bestpractices.coreinfrastructure.org/) (free, 20 min) - the industry standard used by Node.js, Kubernetes, etc.
 
 [Demo](https://keen.terryrichards.dev) • [Documentation](./docs) • [API Reference](./docs/api/API.md) • [Deploy Guide](./docs/guides/DEPLOYMENT.md)
 
