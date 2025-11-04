@@ -1,4 +1,4 @@
-# 🧠 KeenDreams - Vectorized Cloud Memory
+# 💭 KeenDreams - Vectorized Cloud Memory
 
 <div align="center">
 
@@ -43,13 +43,13 @@ This is a **showcase of what's possible** when you build entirely on Cloudflare'
 </div>
 
 - 🌍 **Cloudflare Workers** - Zero cold starts, global edge deployment across 330+ cities
-- 🧠 **Cloudflare Vectorize** - 768-dimensional semantic search at the edge
-- 🤖 **Cloudflare AI** - BGE-Base-EN-v1.5 embeddings, no external APIs needed
-- 💾 **Cloudflare KV** - Distributed key-value storage with global replication
+- 💭 **Cloudflare Vectorize** - 768-dimensional semantic search at the edge
+- 🥔 **Cloudflare AI** - BGE-Base-EN-v1.5 embeddings, no external APIs needed
+- 🥦 **Cloudflare KV** - Distributed key-value storage with global replication
 - 📄 **Cloudflare Pages** - Static site hosting with instant deploys
 
 **Network Statistics**:
-- 🌐 **6 trillion requests/day** - Handles scale you can't outgrow
+- 🍅 **6 trillion requests/day** - Handles scale you can't outgrow
 - 🌍 **330+ cities globally** - Edge compute everywhere
 - ⚡ **95% of Internet users** within 50ms latency
 - 💰 **$0 egress fees** - Unlike AWS ($0.09/GB), Cloudflare charges nothing for bandwidth
@@ -99,7 +99,7 @@ flowchart LR
         C1[User in Europe 🇪🇺]
         C2[Nearest edge 📍<br/>Amsterdam - 8ms]
         C3[0ms cold start ⚡<br/>V8 isolates]
-        C4[Edge-local data 💾]
+        C4[Edge-local data 🥦]
         C5[Response: 32ms ⏱️]
 
         C1 --> C2 --> C3 --> C4 --> C5
@@ -120,13 +120,13 @@ flowchart LR
 
 ## ✨ Features - Your Development Journey, Remembered
 
-🔍 **Semantic Search** - Natural language queries powered by AI embeddings
+🥕 **Semantic Search** - Natural language queries powered by AI embeddings
 💭 **Dream Storage** - Capture development sessions with full context
 🎯 **Smart Restoration** - Restore project state from cloud memory
-🔐 **Secure by Default** - Bearer token authentication built-in
+🌍 **Secure by Default** - Bearer token authentication built-in
 ⚡ **Edge-First** - Sub-50ms response times worldwide
 📊 **Usage Analytics** - Track searches, projects, and sessions
-🌐 **CORS Ready** - Works seamlessly with any frontend
+🍅 **CORS Ready** - Works seamlessly with any frontend
 🔄 **Real-time Sync** - Instant updates across all edge locations
 
 ---
@@ -247,8 +247,8 @@ Fork this repo and you'll have:
 - 📖 Documentation search
 - 📝 Note-taking apps
 - 💬 Customer support systems
-- 🔍 Code search engines
-- 🧠 Personal knowledge management
+- 🥕 Code search engines
+- 💭 Personal knowledge management
 - 📊 Content recommendation engines
 
 See [Template Guide](./docs/guides/TEMPLATE_GUIDE.md) for adaptation examples.
@@ -345,15 +345,15 @@ flowchart TB
 
     subgraph Cloudflare["☁️ Cloudflare Platform<br/>(Your Account - YOU Control Everything)"]
         E[Cloudflare Workers 🏃<br/>Runs at 330+ locations worldwide]
-        F[Vectorize 🧠<br/>AI-powered semantic search]
-        G[KV Storage 💾<br/>Fast key-value database]
-        H[AI Workers 🤖<br/>Text → Vector embeddings]
+        F[Vectorize 💭<br/>AI-powered semantic search]
+        G[KV Storage 🥦<br/>Fast key-value database]
+        H[AI Workers 🥔<br/>Text → Vector embeddings]
     end
 
-    subgraph Data["🔐 Your Data (100% Isolated)"]
+    subgraph Data["🌍 Your Data (100% Isolated)"]
         I[Your Projects 📁]
         J[Your Dreams 💭]
-        K[Your Searches 🔍]
+        K[Your Searches 🥕]
     end
 
     A --> B
@@ -413,12 +413,12 @@ See [Architecture Documentation](./docs/architecture/ARCHITECTURE.md) for detail
 ### 📖 Guides
 - 🚀 [Deployment Guide](./docs/guides/DEPLOYMENT.md) - Production setup walkthrough
 - 🎨 [Template Guide](./docs/guides/TEMPLATE_GUIDE.md) - Adapt for your use case
-- 🧠 [Semantic Search Guide](./docs/guides/SEMANTIC_SEARCH.md) - AI-powered search usage
+- 💭 [Semantic Search Guide](./docs/guides/SEMANTIC_SEARCH.md) - AI-powered search usage
 
 ### 📘 API & Architecture
 - 📘 [API Reference](./docs/api/API.md) - Complete endpoint documentation
 - 🏗️ [Architecture Overview](./docs/architecture/ARCHITECTURE.md) - System design details
-- 🔐 [Security Audit](./docs/architecture/SECURITY_AUDIT.md) - Security review and best practices
+- 🌍 [Security Audit](./docs/architecture/SECURITY_AUDIT.md) - Security review and best practices
 
 ### 🎯 Examples
 - 🆕 [Basic Setup](./examples/basic-setup/) - Get started in 5 minutes
@@ -501,7 +501,7 @@ The development server runs at `http://localhost:8787` with hot reload enabled.
 - 📦 Unlimited bundle size (with modules)
 
 **Real Numbers** (Official Cloudflare Statistics):
-- 🌐 **330+ cities** in Cloudflare's global network
+- 🍅 **330+ cities** in Cloudflare's global network
 - 📊 **95% of Internet users** within 50ms of a Cloudflare data center
 - 🚀 **6 trillion requests per day** handled globally (20% of all web traffic)
 - ⚡ **441% faster** than AWS Lambda at P95 latency
@@ -557,8 +557,8 @@ Search support tickets and knowledge base articles semantically for faster resol
 graph TB
     subgraph User1["👤 User A's Cloudflare Account"]
         W1[Worker A 🏃<br/>Isolated deployment]
-        KV1[KV Storage A 💾<br/>User A's data only]
-        V1[Vectorize A 🧠<br/>User A's embeddings]
+        KV1[KV Storage A 🥦<br/>User A's data only]
+        V1[Vectorize A 💭<br/>User A's embeddings]
         K1[API Key A 🔑<br/>Known only to User A]
 
         W1 --> KV1
@@ -568,8 +568,8 @@ graph TB
 
     subgraph User2["👤 User B's Cloudflare Account"]
         W2[Worker B 🏃<br/>Isolated deployment]
-        KV2[KV Storage B 💾<br/>User B's data only]
-        V2[Vectorize B 🧠<br/>User B's embeddings]
+        KV2[KV Storage B 🥦<br/>User B's data only]
+        V2[Vectorize B 💭<br/>User B's embeddings]
         K2[API Key B 🔑<br/>Known only to User B]
 
         W2 --> KV2
@@ -588,7 +588,7 @@ graph TB
     style User2 fill:#f3e5f5,stroke:#7b1fa2,stroke-width:3px
     style Developer fill:#fff3e0,stroke:#f57c00,stroke-width:3px
 
-    note1["🔐 KEY POINT:<br/>This is NOT a SaaS service!<br/>Each deployment is 100% isolated in YOUR Cloudflare account.<br/>The original developer has ZERO access to your infrastructure or data."]
+    note1["🌍 KEY POINT:<br/>This is NOT a SaaS service!<br/>Each deployment is 100% isolated in YOUR Cloudflare account.<br/>The original developer has ZERO access to your infrastructure or data."]
     style note1 fill:#ffebee,stroke:#c62828,stroke-width:3px,font-weight:bold
 ```
 
@@ -613,12 +613,12 @@ wrangler vectorize list         # YOUR indexes
 
 ### Security Features
 
-- 🔐 Bearer token authentication required for all endpoints
+- 🌍 Bearer token authentication required for all endpoints
 - 🛡️ Built-in DDoS protection via Cloudflare
 - 🔒 HTTPS enforced everywhere
 - 🚫 Rate limiting configurable
 - 📊 Audit logging available
-- 🔍 Open source - Audit the code yourself
+- 🥕 Open source - Audit the code yourself
 - 🏗️ Distributed architecture - No central point of failure
 
 See [SECURITY.md](./SECURITY.md) for detailed security architecture, data isolation verification, and vulnerability reporting.
