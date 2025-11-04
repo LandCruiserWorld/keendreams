@@ -27,11 +27,11 @@
 
 </div>
 
-> 🌍 **Built on Cloudflare's Global Network**: 330+ cities serving 20% of all web traffic (6 trillion requests/day). Enterprise infrastructure that used to cost thousands - now free to deploy. 95% of Internet users within 50ms. [What is Cloudflare? →](https://www.cloudflare.com/learning/what-is-cloudflare/)
+> **Built on Cloudflare's Global Network**: 330+ cities serving 20% of all web traffic (6 trillion requests/day). Enterprise infrastructure that used to cost thousands - now free to deploy. 95% of Internet users within 50ms. [What is Cloudflare? →](https://www.cloudflare.com/learning/what-is-cloudflare/)
 
 ---
 
-## ⚡ Built 100% on Cloudflare
+## Built 100% on Cloudflare
 
 This is a **showcase of what's possible** when you build entirely on Cloudflare's edge platform:
 
@@ -42,20 +42,20 @@ This is a **showcase of what's possible** when you build entirely on Cloudflare'
 
 </div>
 
-- 🌍 **Cloudflare Workers** - Zero cold starts, global edge deployment across 330+ cities
-- 💭 **Cloudflare Vectorize** - 768-dimensional semantic search at the edge
-- 🥔 **Cloudflare AI** - BGE-Base-EN-v1.5 embeddings, no external APIs needed
-- 🥦 **Cloudflare KV** - Distributed key-value storage with global replication
-- 📄 **Cloudflare Pages** - Static site hosting with instant deploys
+- **Cloudflare Workers** - Zero cold starts, global edge deployment across 330+ cities
+- **Cloudflare Vectorize** - 768-dimensional semantic search at the edge
+- **Cloudflare AI** - BGE-Base-EN-v1.5 embeddings, no external APIs needed
+- **Cloudflare KV** - Distributed key-value storage with global replication
+- **Cloudflare Pages** - Static site hosting with instant deploys
 
 <details>
 <summary><strong>Network Statistics</strong> (Click to expand)</summary>
 
-- 🍅 **6 trillion requests/day** - Handles scale you can't outgrow
-- 🌍 **330+ cities globally** - Edge compute everywhere
-- ⚡ **95% of Internet users** within 50ms latency
-- 💰 **$0 egress fees** - Unlike AWS ($0.09/GB), Cloudflare charges nothing for bandwidth
-- 🚀 **0ms cold starts** - Tested on production traffic at massive scale
+- **6 trillion requests/day** - Handles scale you can't outgrow
+- **330+ cities globally** - Edge compute everywhere
+- **95% of Internet users** within 50ms latency
+- **$0 egress fees** - Unlike AWS ($0.09/GB), Cloudflare charges nothing for bandwidth
+- **0ms cold starts** - Tested on production traffic at massive scale
 
 </details>
 
@@ -63,10 +63,10 @@ This is a **showcase of what's possible** when you build entirely on Cloudflare'
 - **Free Tier**: 100,000 requests/day (3M/month) + 10GB storage
   - **In Dream Terms**: Store ~500,000 development sessions + search them 3 million times/month
   - **Real-World Usage**:
-    - Solo developer: 5 dreams/day = 150/month → **Will never hit limits** ✅
-    - Small team (10 devs): 50 dreams/day = 1,500/month → **Still free** ✅
-    - Growing team (50 devs): 250 dreams/day = 7,500/month → **Still free** ✅
-    - Even 100-person eng team: ~1,000 dreams/day → **Free for years** ✅
+    - Solo developer: 5 dreams/day = 150/month → Will never hit limits
+    - Small team (10 devs): 50 dreams/day = 1,500/month → Still free
+    - Growing team (50 devs): 250 dreams/day = 7,500/month → Still free
+    - Even 100-person eng team: ~1,000 dreams/day → Free for years
   - **Search Operations**: 3M/month = 100,000/day = enough for 1,000+ developers searching constantly
 - **Storage Reality**: 10GB = ~500,000 dreams (avg 20KB each with embeddings)
   - **Timeline**: At 10 dreams/day, takes **137 years** to fill 10GB ⏰
@@ -79,7 +79,7 @@ This is a **showcase of what's possible** when you build entirely on Cloudflare'
 
 ---
 
-## ⚡ Why Edge Computing Matters
+## Why Edge Computing Matters
 
 <details>
 <summary><strong>Traditional Cloud vs Cloudflare Workers</strong> (Click to expand)</summary>
@@ -122,20 +122,20 @@ flowchart LR
 
 ---
 
-## ✨ Features - Your Development Journey, Remembered
+## Features
 
-🥕 **Semantic Search** - Natural language queries powered by AI embeddings
-💭 **Dream Storage** - Capture development sessions with full context
-🎯 **Smart Restoration** - Restore project state from cloud memory
-🌍 **Secure by Default** - Bearer token authentication built-in
-⚡ **Edge-First** - Sub-50ms response times worldwide
-📊 **Usage Analytics** - Track searches, projects, and sessions
-🍅 **CORS Ready** - Works seamlessly with any frontend
-🔄 **Real-time Sync** - Instant updates across all edge locations
+**Semantic Search** - Natural language queries powered by AI embeddings
+**Dream Storage** - Capture development sessions with full context
+**Smart Restoration** - Restore project state from cloud memory
+**Secure by Default** - Bearer token authentication built-in
+**Edge-First** - Sub-50ms response times worldwide
+**Usage Analytics** - Track searches, projects, and sessions
+**CORS Ready** - Works seamlessly with any frontend
+**Real-time Sync** - Instant updates across all edge locations
 
 ---
 
-## 🎯 Begin Your Journey in 30 Seconds
+## Begin Your Journey in 30 Seconds
 
 Watch how fast you can deploy globally:
 
@@ -154,12 +154,12 @@ sequenceDiagram
     You->>CF: Sign in (free account)
     CF->>World: Deploy to all edge locations
     CF->>You: Set API key (wrangler secret put)
-    World->>You: ✅ Live globally!
+    World->>You: Live globally!
 
     Note over You,World: You now have:<br/>✅ Global API (330+ locations)<br/>✅ AI semantic search<br/>✅ 10GB free storage<br/>✅ 100k requests/day free<br/>✅ Complete control
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -218,18 +218,18 @@ When you clicked deploy, Cloudflare created:
 > 💡 **What This Free Infrastructure Enables** (AI Cloud Memory In Action):
 >
 > **Personal AI Knowledge Base**:
-> - 10 years of coding sessions (18,000+ dreams) → Searchable with "how did I fix that auth bug?" ✅
-> - Every project you've ever worked on → Instantly recallable with natural language ✅
+> - 10 years of coding sessions (18,000+ dreams) → Searchable with "how did I fix that auth bug?"
+> - Every project you've ever worked on → Instantly recallable with natural language
 > - **Power**: Your entire dev career becomes searchable memory. Find solutions you wrote 3 years ago in seconds.
 >
 > **Team Development Intelligence**:
-> - 20-person team's collective knowledge (2,000 dreams/month) → Shared AI memory ✅
-> - "Who solved the Redis connection timeout?" → AI finds the person and solution ✅
+> - 20-person team's collective knowledge (2,000 dreams/month) → Shared AI memory
+> - "Who solved the Redis connection timeout?" → AI finds the person and solution
 > - **Power**: Team memory that survives employee turnover. New devs search years of solutions.
 >
 > **Multi-Project Context Switching**:
-> - Work on 50 different projects → AI remembers your context for each ✅
-> - "What was I working on in the mobile app?" → Instant restoration ✅
+> - Work on 50 different projects → AI remembers your context for each
+> - "What was I working on in the mobile app?" → Instant restoration
 > - **Power**: No more "what was I doing?" when switching projects. AI remembers for you.
 >
 > **The Math**: Even capturing 10 dreams/day, you'd need **137 years** to fill storage. Your development memory is essentially **unlimited**.
@@ -238,31 +238,31 @@ When you clicked deploy, Cloudflare created:
 
 ---
 
-## 🎯 Use This as Your Semantic Search Starter
+## Use This as Your Semantic Search Starter
 
 Fork this repo and you'll have:
-- ✅ Production-ready Cloudflare Workers setup
-- ✅ Vector embeddings configured
-- ✅ Semantic search API (4 endpoints)
-- ✅ Authentication with Bearer tokens
-- ✅ Deployment automation
-- ✅ TypeScript configured
-- ✅ Testing suite included
+- Production-ready Cloudflare Workers setup
+- Vector embeddings configured
+- Semantic search API (4 endpoints)
+- Authentication with Bearer tokens
+- Deployment automation
+- TypeScript configured
+- Testing suite included
 
 **Perfect for**:
-- 📚 Knowledge bases
-- 📖 Documentation search
-- 📝 Note-taking apps
-- 💬 Customer support systems
-- 🥕 Code search engines
-- 💭 Personal knowledge management
-- 📊 Content recommendation engines
+- Knowledge bases
+- Documentation search
+- Note-taking apps
+- Customer support systems
+- Code search engines
+- Personal knowledge management
+- Content recommendation engines
 
 See [Template Guide](./docs/guides/TEMPLATE_GUIDE.md) for adaptation examples.
 
 ---
 
-## 💡 Example Usage - Exploring Your Memories
+## Example Usage - Exploring Your Memories
 
 ### Capture a Development Dream
 
@@ -330,7 +330,7 @@ curl https://your-worker.workers.dev/api/projects/my-awesome-app \
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 KeenDreams runs entirely at the edge - here's how:
 
@@ -415,29 +415,29 @@ See [Architecture Documentation](./docs/architecture/ARCHITECTURE.md) for detail
 
 ---
 
-## 📚 Documentation
+## Documentation
 
-### 📖 Guides
-- 🚀 [Deployment Guide](./docs/guides/DEPLOYMENT.md) - Production setup walkthrough
-- 🎨 [Template Guide](./docs/guides/TEMPLATE_GUIDE.md) - Adapt for your use case
-- 💭 [Semantic Search Guide](./docs/guides/SEMANTIC_SEARCH.md) - AI-powered search usage
+### Guides
+- [Deployment Guide](./docs/guides/DEPLOYMENT.md) - Production setup walkthrough
+- [Template Guide](./docs/guides/TEMPLATE_GUIDE.md) - Adapt for your use case
+- [Semantic Search Guide](./docs/guides/SEMANTIC_SEARCH.md) - AI-powered search usage
 
-### 📘 API & Architecture
-- 📘 [API Reference](./docs/api/API.md) - Complete endpoint documentation
-- 🏗️ [Architecture Overview](./docs/architecture/ARCHITECTURE.md) - System design details
-- 🌍 [Security Audit](./docs/architecture/SECURITY_AUDIT.md) - Security review and best practices
+### API & Architecture
+- [API Reference](./docs/api/API.md) - Complete endpoint documentation
+- [Architecture Overview](./docs/architecture/ARCHITECTURE.md) - System design details
+- [Security Audit](./docs/architecture/SECURITY_AUDIT.md) - Security review and best practices
 
-### 🎯 Examples
-- 🆕 [Basic Setup](./examples/basic-setup/) - Get started in 5 minutes
-- 📦 [More Examples](./examples/) - Additional use cases
+### Examples
+- [Basic Setup](./examples/basic-setup/) - Get started in 5 minutes
+- [More Examples](./examples/) - Additional use cases
 
-### 🤝 Contributing
+### Contributing
 - [Contributing Guide](./CONTRIBUTING.md) - How to contribute
 - [Changelog](./CHANGELOG.md) - Version history
 
 ---
 
-## 🛠️ Deploy to Production
+## Deploy to Production
 
 Deploy your own instance in under 2 minutes:
 
@@ -455,7 +455,7 @@ wrangler deploy
 # 4. Set your bearer token
 wrangler secret put BEARER_TOKEN
 
-# ✅ Done! Your API is live globally
+# Done! Your API is live globally
 ```
 
 **Custom Domain** (optional):
@@ -468,7 +468,7 @@ See [Deployment Guide](./docs/guides/DEPLOYMENT.md) for advanced configurations.
 
 ---
 
-## 🧪 Local Development
+## Local Development
 
 ```bash
 # Start local development server
@@ -497,21 +497,21 @@ The development server runs at `http://localhost:8787` with hot reload enabled.
 **Traditional Approach**:
 - 🐌 Cold starts (Lambda: 100-1000ms)
 - 💸 High costs at scale ($20/1M requests)
-- 🌍 Single region = high latency
+- Single region = high latency
 - 🔧 Complex infrastructure management
-- 📦 Limited bundle sizes
+- Limited bundle sizes
 
 **Cloudflare Workers**:
 - ⚡ Zero cold starts (tested on 6 trillion requests/day)
 - 💰 $0.50/1M requests (10x cheaper)
-- 🌍 330+ edge locations globally
+- 330+ edge locations globally
 - 🎯 One command deployment
-- 📦 Unlimited bundle size (with modules)
+- Unlimited bundle size (with modules)
 
 **Real Numbers** (Official Cloudflare Statistics):
 - 🍅 **330+ cities** in Cloudflare's global network
-- 📊 **95% of Internet users** within 50ms of a Cloudflare data center
-- 🚀 **6 trillion requests per day** handled globally (20% of all web traffic)
+- **95% of Internet users** within 50ms of a Cloudflare data center
+- **6 trillion requests per day** handled globally (20% of all web traffic)
 - ⚡ **441% faster** than AWS Lambda at P95 latency
 - 💰 **96.8% cheaper** than AWS S3 for storage with high egress (R2 vs S3)
 - 🔥 **0ms cold starts** vs AWS Lambda's 100-1000ms
@@ -529,7 +529,7 @@ The development server runs at `http://localhost:8787` with hot reload enabled.
 
 ---
 
-## 🎨 Use Cases - Where Will You Explore?
+## Use Cases - Where Will You Explore?
 
 ### Personal Knowledge Base
 Store and search through your notes, code snippets, and learnings with natural language.
@@ -548,18 +548,18 @@ Search support tickets and knowledge base articles semantically for faster resol
 
 ---
 
-## 🤝 Community & Support
+## Community & Support
 
-- 💬 [Discussions](https://github.com/LandCruiserWorld/keendreams/discussions) - Ask questions and share ideas
-- 🐛 [Issues](https://github.com/LandCruiserWorld/keendreams/issues) - Report bugs and request features
-- 📖 [Wiki](https://github.com/LandCruiserWorld/keendreams/wiki) - Community guides and tutorials
-- 🔗 [Cloudflare Discord](https://discord.gg/cloudflaredev) - Workers community
+- [Discussions](https://github.com/LandCruiserWorld/keendreams/discussions) - Ask questions and share ideas
+- [Issues](https://github.com/LandCruiserWorld/keendreams/issues) - Report bugs and request features
+- [Wiki](https://github.com/LandCruiserWorld/keendreams/wiki) - Community guides and tutorials
+- [Cloudflare Discord](https://discord.gg/cloudflaredev) - Workers community
 
 ---
 
-## 🔒 Security & Privacy
+## Security & Privacy
 
-### Complete User Data Isolation ✅
+### Complete User Data Isolation
 
 **This is NOT a SaaS service** - When you deploy KeenDreams, you create an isolated instance in YOUR Cloudflare account.
 
@@ -608,11 +608,11 @@ graph TB
 </details>
 
 **You control your own infrastructure**:
-- ✅ **Your own KV namespaces** - Data stored in your account only
-- ✅ **Your own Vectorize index** - Embeddings in your infrastructure
-- ✅ **Your own Worker deployment** - Running on your edge network
-- ✅ **Your own API keys** - Secrets controlled by you
-- ✅ **Zero access by repository maintainers** - Complete isolation
+- **Your own KV namespaces** - Data stored in your account only
+- **Your own Vectorize index** - Embeddings in your infrastructure
+- **Your own Worker deployment** - Running on your edge network
+- **Your own API keys** - Secrets controlled by you
+- **Zero access by repository maintainers** - Complete isolation
 
 **Verify it yourself**:
 ```bash
@@ -628,19 +628,19 @@ wrangler vectorize list         # YOUR indexes
 
 ### Security Features
 
-- 🌍 Bearer token authentication required for all endpoints
-- 🛡️ Built-in DDoS protection via Cloudflare
-- 🔒 HTTPS enforced everywhere
-- 🚫 Rate limiting configurable
-- 📊 Audit logging available
-- 🥕 Open source - Audit the code yourself
-- 🏗️ Distributed architecture - No central point of failure
+- Bearer token authentication required for all endpoints
+- Built-in DDoS protection via Cloudflare
+- HTTPS enforced everywhere
+- Rate limiting configurable
+- Audit logging available
+- Open source - Audit the code yourself
+- Distributed architecture - No central point of failure
 
 See [SECURITY.md](./SECURITY.md) for detailed security architecture, data isolation verification, and vulnerability reporting.
 
 ---
 
-## 🚢 Roadmap
+## Roadmap
 
 - [ ] **Real-time** - WebSocket support for live updates
 - [ ] **Multi-tenancy** - Support for team workspaces
@@ -654,7 +654,7 @@ See [ROADMAP.md](./docs/ROADMAP.md) for detailed plans.
 
 ---
 
-## 📊 Performance
+## Performance
 
 Benchmarked on Cloudflare's global network:
 
@@ -679,7 +679,7 @@ Tested from 50+ global locations. See [BENCHMARKS.md](./docs/BENCHMARKS.md) for 
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 Built with amazing Cloudflare technologies:
 - [Cloudflare Workers](https://workers.cloudflare.com/) - Edge compute across 330+ cities
@@ -693,7 +693,7 @@ Inspired by the need for better development context management and powered by Cl
 
 ---
 
-## 👤 About & Contact
+## About & Contact
 
 **Maintainer**: Terry Richards
 
@@ -707,13 +707,13 @@ I'm always happy to help developers learning edge computing and semantic search!
 
 ---
 
-## 📄 License
+## License
 
 MIT License - see [LICENSE](./LICENSE) for details.
 
 ---
 
-## 🚀 Begin Your Adventure
+## Begin Your Adventure
 
 ```bash
 npx create-cloudflare@latest my-keendreams --template https://github.com/LandCruiserWorld/keendreams
