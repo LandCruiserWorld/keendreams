@@ -1,3 +1,8 @@
+# KeenDreams Worker Configuration
+# This file uses PLACEHOLDER IDs that are safe for public repositories.
+# The "Deploy to Cloudflare" button reads these placeholders and automatically
+# creates real resources with real IDs during deployment.
+
 name = "keendreams"
 main = "src/worker.js"
 compatibility_date = "2024-01-01"
