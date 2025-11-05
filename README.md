@@ -1,4 +1,4 @@
-# 💭 KeenDreams - AI Vectorized Cloud Memory
+# 🧠 KeenDreams - AI Vectorized Cloud Memory
 
 <div align="center">
 
