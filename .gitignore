@@ -64,3 +64,5 @@ claude-dream-*.json
 ENHANCED_WAKE.md
 bookmarklet-url.txt
 *.html
+# Personal development notes (not needed for public repo)
+CLAUDE.md
