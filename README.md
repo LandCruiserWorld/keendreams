@@ -9,7 +9,7 @@
 [![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/LandCruiserWorld/keendreams)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![OpenSSF Best Practices: Pending](https://img.shields.io/badge/OpenSSF_Best_Practices-Pending-yellow.svg)](https://bestpractices.coreinfrastructure.org/)
-[![Security: Complete User Isolation](https://img.shields.io/badge/Security-Complete_User_Isolation-green.svg)](./SECURITY.md)
+[![Security: Complete User Isolation](https://img.shields.io/badge/Security-Complete_User_Isolation-green.svg)](./docs/SECURITY.md)
 [![Cloudflare Workers](https://img.shields.io/badge/Cloudflare-Workers-orange)](https://workers.cloudflare.com/)
 [![Vectorize](https://img.shields.io/badge/Cloudflare-Vectorize-blue)](https://developers.cloudflare.com/vectorize/)
 [![Network: 330+ Cities](https://img.shields.io/badge/Network-330%2B_Cities-blue)](https://www.cloudflare.com/network/)
@@ -454,8 +454,8 @@ See [Architecture Documentation](./docs/architecture/ARCHITECTURE.md) for detail
 - [More Examples](./examples/) - Additional use cases
 
 ### Contributing
-- [Contributing Guide](./CONTRIBUTING.md) - How to contribute
-- [Changelog](./CHANGELOG.md) - Version history
+- [Contributing Guide](./docs/CONTRIBUTING.md) - How to contribute
+- [Changelog](./docs/CHANGELOG.md) - Version history
 
 ---
 
@@ -658,7 +658,7 @@ wrangler vectorize list         # YOUR indexes
 - Open source - Audit the code yourself
 - Distributed architecture - No central point of failure
 
-See [SECURITY.md](./SECURITY.md) for detailed security architecture, data isolation verification, and vulnerability reporting.
+See [SECURITY.md](./docs/SECURITY.md) for detailed security architecture, data isolation verification, and vulnerability reporting.
 
 ---
 
